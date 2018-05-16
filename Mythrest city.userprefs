@@ -1,0 +1,25 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Managers\ButtonManager.cs">
+    <Files>
+      <File FileName="Assets\Scripts\NPC\NPC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NPC\MockNPCDB.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerActions.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerFriendship.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NPC\NPCBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NPC\MockNPCDialog.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Colliders\PlayerCollisions.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ToolBehaviours\HoldingItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ToolBehaviours\WateringCan.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Classes\Crops.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CropBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GoToBed.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Managers\ButtonManager.cs" Line="35" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

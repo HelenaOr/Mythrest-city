@@ -1,0 +1,218 @@
+fileFormatVersion: 2
+guid: a2943743f9b588645a41d2f9f9055b63
+timeCreated: 1523879214
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bench1
+    100002: Floor
+    100004: Fountain
+    100006: House1
+    100008: House2
+    100010: House3
+    100012: House4
+    100014: //RootNode
+    100016: Bench2
+    100018: Bench3
+    100020: Church
+    100022: Bench4
+    100024: Tree1
+    100026: Tree2
+    100028: Tree3
+    100030: Tree4
+    100032: Tree5
+    100034: Tree6
+    100036: Tree7
+    100038: Tree8
+    100040: Shop
+    400000: Bench1
+    400002: Floor
+    400004: Fountain
+    400006: House1
+    400008: House2
+    400010: House3
+    400012: House4
+    400014: //RootNode
+    400016: Bench2
+    400018: Bench3
+    400020: Church
+    400022: Bench4
+    400024: Tree1
+    400026: Tree2
+    400028: Tree3
+    400030: Tree4
+    400032: Tree5
+    400034: Tree6
+    400036: Tree7
+    400038: Tree8
+    400040: Shop
+    2100000: unnamed
+    2100002: Bench
+    2100004: House1
+    2100006: Fountain1
+    2100008: Fountain2
+    2100010: Floor
+    2100012: House4
+    2100014: House3
+    2100016: House2
+    2100018: Wood
+    2100020: Leaf
+    2100022: Church
+    2300000: Bench1
+    2300002: Floor
+    2300004: Fountain
+    2300006: House1
+    2300008: House2
+    2300010: House3
+    2300012: House4
+    2300014: Bench2
+    2300016: Bench3
+    2300018: Church
+    2300020: Bench4
+    2300022: Tree1
+    2300024: Tree2
+    2300026: Tree3
+    2300028: Tree4
+    2300030: Tree5
+    2300032: Tree6
+    2300034: Tree7
+    2300036: Tree8
+    2300038: Shop
+    3300000: Bench1
+    3300002: Floor
+    3300004: Fountain
+    3300006: House1
+    3300008: House2
+    3300010: House3
+    3300012: House4
+    3300014: Bench2
+    3300016: Bench3
+    3300018: Church
+    3300020: Bench4
+    3300022: Tree1
+    3300024: Tree2
+    3300026: Tree3
+    3300028: Tree4
+    3300030: Tree5
+    3300032: Tree6
+    3300034: Tree7
+    3300036: Tree8
+    3300038: Shop
+    4300000: Fountain
+    4300002: Bench1
+    4300004: House4
+    4300006: House3
+    4300008: House2
+    4300010: Floor
+    4300012: House1
+    4300014: Bench3
+    4300016: Bench2
+    4300018: Church
+    4300020: Bench4
+    4300022: Tree8
+    4300024: Tree6
+    4300026: Tree7
+    4300028: Tree4
+    4300030: Tree5
+    4300032: Tree3
+    4300034: Tree2
+    4300036: Tree1
+    4300038: Shop
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bench
+    second: {fileID: 2100000, guid: 2461ee32a28c3fd4797fdf805bfd5a6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fountain1
+    second: {fileID: 2100000, guid: 56c070dcabe1661408fa70f3a3ea2a16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fountain2
+    second: {fileID: 2100000, guid: 3b74d6e16fb64914497ac7f915e8d511, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
