@@ -8,10 +8,14 @@ public class NPC {
 	public string surname;
 	public int birthdayDay;
 	public int birthdayMonth;
+	public int friendship;
 	public int favouriteItem;
 	public int[] likedItems;
 	public int[] dislikedItems;
 	public int horrorItem;
+
+	public bool gifted;
+	public bool talked;
 
 	public NPC(string name, string surname, int birthdayDay, int birthdayMonth,int favouriteItem, int [] likedItems, int[] dislikedItems, int horrorItem){
 		this.name = name;

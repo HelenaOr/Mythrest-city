@@ -16,11 +16,10 @@ public class Hoe : MonoBehaviour {
 		timeManager = FindObjectOfType (typeof(TimeManager)) as TimeManager;
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+
+	//In this function a ray cast is thrown to check if we can plow the soil square
+	//if we can, the soil will be plowed and its state will change
 
 	public void plowSoil ()
 	{
@@ -29,7 +28,6 @@ public class Hoe : MonoBehaviour {
 		soil = s.allSquares;
 		for (int i = 0; i < soil.Count; i++) {
 
-			//if(soil[i].getSoil().)
 			if (soil [i].getSoil ().GetComponent<SoilCollision> ().collision == true && soil [i].getType ().Equals (Soil.SoilTypes.NOTPLOWED)) {
 
 				Ray ray = camera.ScreenPointToRay (Input.mousePosition);

@@ -15,9 +15,9 @@ public class MockNPCDialog : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//EMLILY//
-		emilyLowFriendshipDialogs.Add ("Everything good today? I hope so. Let me know if you need some help, I will help you.");
-		emilyLowFriendshipDialogs.Add("I'm a little tired today, lets talk later. But don't worry, I'm feeling better than some years ago.");
-		emilyLowFriendshipDialogs.Add ("The air here is good for my health, it's cleaner than city air.");
+		emilyLowFriendshipDialogs.Add ("Everything good today? I hope so. Let me know if you need some help, I will help you."); //0
+		emilyLowFriendshipDialogs.Add("I'm a little tired today, lets talk later. But don't worry, I'm feeling better than some years ago.");//1
+		emilyLowFriendshipDialogs.Add ("The air here is good for my health, it's cleaner than city air.");//2
 
 		emilyMediumFriendshipDialogs.Add ("I always like this village, but since you arrived here I like it more.");
 		emilyMediumFriendshipDialogs.Add ("It's good to have you around here, you are helping us all.");

@@ -229,6 +229,21 @@ public class TimeManager : MonoBehaviour {
 			howManyDays.growingTree ();
 		}
 
+		MockNPCDB allNpc = FindObjectOfType (typeof(MockNPCDB)) as MockNPCDB;
+
+		allNpc.Emily.gifted = false;
+		allNpc.Emily.talked = false;
+
+		allNpc.Riley.gifted = false;
+		allNpc.Riley.talked = false;
+
+		allNpc.Lily.gifted = false;
+		allNpc.Lily.talked = false;
+
+		allNpc.Tyler.gifted = false;
+		allNpc.Tyler.talked = false;
+
+
 		seconds = 0.0f;
 		hour = 6.0f;
 		day = day + 1;

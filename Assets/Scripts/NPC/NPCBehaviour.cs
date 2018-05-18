@@ -12,7 +12,7 @@ public class NPCBehaviour : MonoBehaviour {
 	public MockNPCDB NPCdatabase;
 	public List<string> dialogs;
 	public MockNPCDialog dialogDB;
-
+	public bool gifted;
 	public bool talking;
 	// Use this for initialization
 	void Start () {
@@ -27,54 +27,65 @@ public class NPCBehaviour : MonoBehaviour {
 		} else if (this.name.Contains ("Lily")) {
 			myself = NPCdatabase.Lily;
 		}
+		friendshipPoints = myself.friendship;
+		gifted = myself.gifted;
+		firstTalked = myself.talked;
+
 	}
 	
 
-	public void Talk(){
+	public void Talk(int itemCode){
 		talking = true;
 		this.transform.Find ("TalkCanvas").gameObject.SetActive (true);
 		Time.timeScale = 0.0f;
 		Transform canvas = this.transform.Find ("TalkCanvas");
-		if (firstTalked == false) {
-			friendshipPoints += 100;
-		}
-		dialogs = dialogDB.GetDialogs (myself.name,friendshipPoints);
-		int random = Random.Range (0, 3);
-		string dialogToSay = dialogs [random];
+		if (itemCode == -1) {
+			if (firstTalked == false) {
+				friendshipPoints += 100;
+			}
+			dialogs = dialogDB.GetDialogs (myself.name,friendshipPoints);
+			int random = Random.Range (0, 3);
+			string dialogToSay = dialogs [random];
+			canvas.transform.Find ("TalkPanel").Find("TalkText").GetComponent<Text> ().text = dialogToSay;
 
-		canvas.transform.Find ("TalkPanel").Find("TalkText").GetComponent<Text> ().text = dialogToSay;
+		} else {
+			if (!gifted) {
+				string dialogToSay ="Tanks";
+				canvas.transform.Find ("TalkPanel").Find("TalkText").GetComponent<Text> ().text = dialogToSay;
+				gifted = true;
+				myself.gifted = true;
+				if (myself.favouriteItem == itemCode) {
+					friendshipPoints += 800;
+
+				}
+				foreach (int i in myself.likedItems) {
+					if (i == itemCode) {
+						friendshipPoints += 300;
+						break;
+					}
+				}
+				foreach (int i in myself.dislikedItems) {
+					if (i == itemCode) {
+						friendshipPoints -= 300;
+						break;
+					}
+				}
+				if (myself.horrorItem == itemCode) {
+					friendshipPoints -= 800;
+				}
+			}
+
+		}
+		myself.friendship = friendshipPoints;
+
 
 	}
 	public void closeDialog(){
 		firstTalked = true;
+		myself.talked = true;
 		talking = false;
 		this.transform.Find ("TalkCanvas").gameObject.SetActive (false);
 		Time.timeScale = 1.0f;
 	}
 
-	public void recieveGift(int itemCode){
-		Debug.Log (itemCode);
-		if (myself.favouriteItem == itemCode) {
-			friendshipPoints += 800;
-			return;
-		}
-		foreach (int i in myself.likedItems) {
-			if (i == itemCode) {
-				friendshipPoints += 300;
-				return;
-			}
-		}
-		foreach (int i in myself.dislikedItems) {
-			if (i == itemCode) {
-				friendshipPoints -= 300;
-				return;
-			}
-		}
-		if (myself.horrorItem == itemCode) {
-			friendshipPoints -= 800;
-			return;
-		}
-		//friendshipPoints += 100;
-		
-	}
 }

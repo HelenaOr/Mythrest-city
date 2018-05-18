@@ -113,7 +113,27 @@ public class PlayerActions : MonoBehaviour
 	void Update ()
 	{
 
+		if (holdingItem.holdingItem) {
 
+			if (NPCCollision.collision == true ) {
+				if(Input.GetKey (KeyCode.E)){
+
+					NPCCollision.NPC.GetComponent<NPCBehaviour> ().Talk (holdingItem.itemCode);
+					anim.SetBool ("isHolding", false);
+					holdingItem.saveItem ();
+
+				}
+
+			}
+			if (Input.GetKey (KeyCode.X)) {
+				buttonToPress.hidePanel ();
+				anim.SetBool ("isHolding", false);
+				holdingItem.saveItem ();
+
+
+			}
+
+		}
 		if (!holdingItem.holdingItem) {
 			if (!this.GetComponent<Animator> ().GetBool ("isPlowing") && !this.GetComponent<Animator> ().GetBool ("isRecollecting")  && !this.GetComponent<Animator> ().GetBool ("isPlanting")) {
 				if (Input.GetKey (KeyCode.F)) {
@@ -161,7 +181,7 @@ public class PlayerActions : MonoBehaviour
 
 			} if (NPCCollision.collision == true && !NPCCollision.NPC.GetComponent<NPCBehaviour> ().talking) {
 				if (Input.GetKey (KeyCode.E)) {
-					NPCCollision.NPC.GetComponent<NPCBehaviour> ().Talk ();
+					NPCCollision.NPC.GetComponent<NPCBehaviour> ().Talk (-1);
 
 
 				}
@@ -174,33 +194,12 @@ public class PlayerActions : MonoBehaviour
 
 			}
 		}
-		if (holdingItem.holdingItem) {
+
 			
-			if (NPCCollision.collision == true ) {
-				if(Input.GetKey (KeyCode.E)){
-					anim.SetBool ("isHolding", false);
-					holdingItem.saveItem ();
-					NPCCollision.NPC.GetComponent<NPCBehaviour> ().recieveGift (holdingItem.itemCode);
-				}
-
-			}
-			if (Input.GetKey (KeyCode.X)) {
-				buttonToPress.hidePanel ();
-				anim.SetBool ("isHolding", false);
-				holdingItem.saveItem ();
-
-
-			}
-				
-		}
-
-
-	
 
 	}
 		
 	IEnumerator waitForEndOfAnimPlow(){
-		
 		yield return new WaitForSeconds (1.1f);
 		hoe.plowSoil ();
 		hoeGO.GetComponent<Animator> ().SetBool ("isPlowing", false);
