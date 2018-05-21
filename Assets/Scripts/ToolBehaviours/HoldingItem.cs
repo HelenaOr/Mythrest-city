@@ -7,6 +7,7 @@ public class HoldingItem : MonoBehaviour {
 	public bool holdingItem;
 	public GameObject item;
 	public int itemCode;
+	public InventoryManager inventoryManager;
 	// Use this for initialization
 	void Start () {
 	}
@@ -20,5 +21,13 @@ public class HoldingItem : MonoBehaviour {
 	public void saveItem(){
 		Destroy (item);
 		holdingItem = false;
+	}
+
+	public void Gift(int code){
+		inventoryManager = GetComponent<InventoryManager> ();
+		inventoryManager.removeItem (code);
+		Destroy (item);
+		holdingItem = false;
+		itemCode = -1;
 	}
 }

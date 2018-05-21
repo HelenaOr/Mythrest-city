@@ -7,6 +7,7 @@ public class MockNPCDialog : MonoBehaviour {
 	public List<string> emilyLowFriendshipDialogs;
 	public List<string> emilyMediumFriendshipDialogs;
 	public List<string> emilyHighFriendshipDialogs;
+	public List<string> emilyThanksDialogs;
 
 	public List<string> rileyLowFriendshipDialogs;
 	public List<string> rileyMediumFriendshipDialogs;
@@ -15,9 +16,9 @@ public class MockNPCDialog : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//EMLILY//
-		emilyLowFriendshipDialogs.Add ("Everything good today? I hope so. Let me know if you need some help, I will help you."); //0
-		emilyLowFriendshipDialogs.Add("I'm a little tired today, lets talk later. But don't worry, I'm feeling better than some years ago.");//1
-		emilyLowFriendshipDialogs.Add ("The air here is good for my health, it's cleaner than city air.");//2
+		emilyLowFriendshipDialogs.Add ("Everything good today? I hope so. Let me know if you need some help, I will help you."); 
+		emilyLowFriendshipDialogs.Add("I'm a little tired today, lets talk later. But don't worry, I'm feeling better than some years ago.");
+		emilyLowFriendshipDialogs.Add ("The air here is good for my health, it's cleaner than city air.");
 
 		emilyMediumFriendshipDialogs.Add ("I always like this village, but since you arrived here I like it more.");
 		emilyMediumFriendshipDialogs.Add ("It's good to have you around here, you are helping us all.");
@@ -27,6 +28,12 @@ public class MockNPCDialog : MonoBehaviour {
 		emilyHighFriendshipDialogs.Add ("I haven't seen my parents for such a long time... I think they had another son while I was here.");
 		emilyHighFriendshipDialogs.Add ("Hello, how is it going? Everything ok? Need something? Oh, you just wanted to say hello?");
 
+		emilyThanksDialogs.Add ("Oh my god! Is that a cherry? For my? It's my fovourite thing in the world!");//0
+		emilyThanksDialogs.Add("Thank you very much! I like it.");//1
+		emilyThanksDialogs.Add ("... Why did you gave my this?");//2
+		emilyThanksDialogs.Add ("You hate my so much that you gave me a spinach? What's wrong with you!?");//3
+		emilyThanksDialogs.Add("Well, this is not bad.");//4
+		emilyThanksDialogs.Add("I would feel bad receiving another gift, please keep it");//5
 		//RILEY//
 		rileyLowFriendshipDialogs.Add ("Ey, having a good day? I'm bored as ever in this small village.");
 		rileyLowFriendshipDialogs.Add ("I wish to go to town someday and meet new people, it would be amazing");
@@ -63,6 +70,13 @@ public class MockNPCDialog : MonoBehaviour {
 			}
 		}
 
+		return new List<string> ();
+	}
+	public List<string> GetDialogsForGifts(string npcName){
+
+		if (npcName.Contains ("Emily")) {
+			return emilyThanksDialogs;
+		}
 		return new List<string> ();
 	}
 }

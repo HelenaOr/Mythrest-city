@@ -76,7 +76,8 @@ public class PlayerActions : MonoBehaviour
 	public NPCCollision NPCCollision;
 	Animator anim;
 	GameObject hoeGO;
-
+	GameObject wcanGO;
+	GameObject sickleGO;
 	public bool doingAction;
 	ButtonToPress buttonToPress;
 	// Use this for initialization
@@ -106,6 +107,8 @@ public class PlayerActions : MonoBehaviour
 
 		anim = GetComponent<Animator> ();
 		hoeGO = this.transform.Find ("hoe").gameObject;
+		wcanGO = this.transform.Find ("wateringcan").gameObject;
+		sickleGO = this.transform.Find ("sickle").gameObject;
 		buttonToPress = FindObjectOfType (typeof(ButtonToPress)) as ButtonToPress;
 	}
 	
@@ -117,11 +120,20 @@ public class PlayerActions : MonoBehaviour
 
 			if (NPCCollision.collision == true ) {
 				if(Input.GetKey (KeyCode.E)){
-
 					NPCCollision.NPC.GetComponent<NPCBehaviour> ().Talk (holdingItem.itemCode);
-					anim.SetBool ("isHolding", false);
-					holdingItem.saveItem ();
+					if (!NPCCollision.NPC.GetComponent<NPCBehaviour> ().alreadygifted) {
+						anim.SetBool ("isHolding", false);
+						holdingItem.Gift (holdingItem.itemCode);
+					}
 
+
+
+				}
+
+			}
+			if (NPCCollision.collision == true && NPCCollision.NPC.GetComponent<NPCBehaviour> ().talking) {
+				if (Input.GetMouseButtonDown (0)) {
+					NPCCollision.NPC.GetComponent<NPCBehaviour> ().closeDialog ();
 				}
 
 			}
@@ -161,9 +173,13 @@ public class PlayerActions : MonoBehaviour
 				}
 					
 			} if (tool.Equals (Tools.SICKLE)) {
-				if (Input.GetMouseButtonDown (1))
+				if (Input.GetMouseButtonDown (1)) {
+					sickleGO.SetActive (true);
+					sickleGO.GetComponent<Animator> ().SetBool ("isCutting", true);
+					anim.SetBool ("isCutting", true);
+					StartCoroutine (waitForEndOfAnimSickle ());
+				}
 					
-					sickle.cutWeed ();
 			} if (tool.Equals (Tools.SEEDS)) {
 				if (Input.GetMouseButtonDown (1)) {
 					anim.SetBool ("isPlanting",true);
@@ -171,11 +187,19 @@ public class PlayerActions : MonoBehaviour
 				}
 					
 			} if (tool.Equals (Tools.WATERINGCAN)) {
-				if (Input.GetMouseButtonDown (1))
-					wateringCan.waterSoil ();
+				if (Input.GetMouseButtonDown (1)) {
+					wcanGO.SetActive (true);
+					wcanGO.GetComponent<Animator> ().SetBool ("isWatering", true);
+					anim.SetBool ("isWatering", true);
+					StartCoroutine (waitForEndOfAnimWater ());
+				}
+					
 			}if (fountainCollision.collision == true) {
 				if (Input.GetKey (KeyCode.E)) {
-					wateringCan.chargeWatteringCan ();
+					wcanGO.SetActive (true);
+					wcanGO.GetComponent<Animator> ().SetBool ("isWatering", true);
+					anim.SetBool ("isWatering", true);
+					StartCoroutine (waitForEndOfAnimChargeWCan ());
 
 				}
 
@@ -208,6 +232,32 @@ public class PlayerActions : MonoBehaviour
 	
 	}
 
+	IEnumerator waitForEndOfAnimWater(){
+		yield return new WaitForSeconds (1.5f);
+		wateringCan.waterSoil ();
+		wcanGO.GetComponent<Animator> ().SetBool ("isWatering", false);
+		anim.SetBool ("isWatering", false);
+		wcanGO.SetActive (false);
+
+	}
+
+	IEnumerator waitForEndOfAnimChargeWCan(){
+		yield return new WaitForSeconds (1.5f);
+		wateringCan.chargeWatteringCan ();
+		wcanGO.GetComponent<Animator> ().SetBool ("isWatering", false);
+		anim.SetBool ("isWatering", false);
+		wcanGO.SetActive (false);
+
+	}
+
+	IEnumerator waitForEndOfAnimSickle(){
+		yield return new WaitForSeconds (1.2f);
+		sickle.cutWeed ();
+		sickleGO.GetComponent<Animator> ().SetBool ("isCutting", false);
+		anim.SetBool ("isCutting", false);
+		sickleGO.SetActive (false);
+
+	}
 
 	IEnumerator waitForEndOfAnimGrab(){
 		yield return new WaitForSeconds (1.5f);
