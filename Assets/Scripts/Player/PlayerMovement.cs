@@ -20,7 +20,11 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if (!this.GetComponent<Animator> ().GetBool ("isPlowing") && !this.GetComponent<Animator> ().GetBool ("isRecollecting")  && !this.GetComponent<Animator> ().GetBool ("isPlanting")) {
+		if (!this.GetComponent<Animator> ().GetBool ("isPlowing") 
+			&& !this.GetComponent<Animator> ().GetBool ("isRecollecting")  
+			&& !this.GetComponent<Animator> ().GetBool ("isPlanting") 
+			&& !this.GetComponent<Animator> ().GetBool ("isWatering")
+			&& !this.GetComponent<Animator> ().GetBool ("isCutting")) {
 			float x = Input.GetAxisRaw ("Horizontal") * Time.deltaTime;
 			float z = Input.GetAxisRaw ("Vertical") * Time.deltaTime;
 

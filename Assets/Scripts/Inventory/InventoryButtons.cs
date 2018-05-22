@@ -132,7 +132,7 @@ public class InventoryButtons : MonoBehaviour
 		ButtonToPress btp = FindObjectOfType (typeof(ButtonToPress)) as ButtonToPress;
 		btp.showPanel ("X", "Save " + item.name);
 		anim.SetBool ("isHolding", true);
-		if (item.inventoryType.Equals (InventoryItem.inventoryTypes.EDIBLE)) {
+		if (item.inventoryType.Equals (InventoryItem.inventoryTypes.EDIBLE) ||item.inventoryType.Equals (InventoryItem.inventoryTypes.NOTEDIBLE) ) {
 			GameObject resource = Resources.Load<GameObject> ("Hold "+ item.inventoryType.ToString().ToLower()+"/" + item.name.ToLower());
 			GameObject instance = Instantiate (resource, GameObject.FindGameObjectWithTag ("Player").transform);
 			holdingItem.item = instance;
