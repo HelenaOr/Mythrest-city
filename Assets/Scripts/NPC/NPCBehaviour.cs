@@ -80,17 +80,20 @@ public class NPCBehaviour : MonoBehaviour {
 						dialogToSay = dialogs [3];
 					}
 					friendshipPoints += 50;
+					canvas.transform.Find ("TalkPanel").Find ("TalkText").GetComponent<Text> ().text = dialogToSay;
 				}
 
-				canvas.transform.Find ("TalkPanel").Find ("TalkText").GetComponent<Text> ().text = dialogToSay;
+
 			} else {
 				dialogToSay = dialogs [5];
+				canvas.transform.Find ("TalkPanel").Find ("TalkText").GetComponent<Text> ().text = dialogToSay;
 			}
 
 		}
 		if (friendshipPoints < 0) {
 			friendshipPoints = 0;
 		}
+
 		myself.friendship = friendshipPoints;
 
 

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/DemoScenes/FarmOutside.unity
+- path: Assets/Scenes/DemoScenes/LoadScene.unity
   isLoaded: 1
   isActive: 1

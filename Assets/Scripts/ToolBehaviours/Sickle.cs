@@ -28,30 +28,31 @@ public class Sickle : MonoBehaviour {
 		CreateSoil sl = FindObjectOfType (typeof(CreateSoil)) as CreateSoil;
 		soil = sl.allSquares;
 
-		Ray ray = camera.ScreenPointToRay (Input.mousePosition);
-		RaycastHit hit;
+		for (int i = 0; i < soil.Count; i++) {
+			if (soil [i].getSoil ().GetComponent<SoilCollision> ().collision == true &&
+				(soil [i].getType ().Equals (Soil.SoilTypes.PLOWED) || soil [i].getType ().Equals (Soil.SoilTypes.PLANTED))) {
+				Ray ray = camera.ScreenPointToRay (Input.mousePosition);
+				RaycastHit hit;
 
-		if (Physics.Raycast (ray, out hit)) {
-			if (hit.transform.tag == "crop") {
-				for (int i = 0; i < crops.Length; i++) {
-					Debug.Log (Vector3.Distance (this.transform.position, crops [i].transform.position));
+				if (Physics.Raycast (ray, out hit)) {
 
-					if (Vector3.Distance (this.transform.position, crops [i].transform.position) < 6 && hit.transform.Equals(crops[i].transform)) {
+					if ((hit.transform.tag == "crop"
+						&& (hit.transform.position.x == soil [i].getSoil ().transform.position.x && hit.transform.position.z == soil [i].getSoil ().transform.position.z))) {
 
-						foreach (Soil s in soil) {
-							if (s.getSoil ().transform.position.x == crops [i].transform.position.x && s.getSoil ().transform.position.z == crops [i].transform.position.z) {
-								if (s.getType ().Equals (Soil.SoilTypes.PLANTED)) {
-									s.soilType = Soil.SoilTypes.PLOWED;
-								}
-								if (s.getType ().Equals (Soil.SoilTypes.WATEREDANDPLATED)) {
-									s.soilType = Soil.SoilTypes.WATERED;
-								}
-							}
+						if (soil [i].getType () == Soil.SoilTypes.PLANTED) {
+
+							soil [i].soilType = Soil.SoilTypes.PLOWED;
+
+						} if(soil [i].getType () == Soil.SoilTypes.WATEREDANDPLATED){
+							soil [i].soilType = Soil.SoilTypes.PLOWED;
 						}
+						Destroy (crops [i].gameObject);
 						playerStamina.loseStamina (5);
-						Destroy (crops [i].transform.gameObject);
 						break;
+
 					}
+
+
 				}
 			}
 		}
