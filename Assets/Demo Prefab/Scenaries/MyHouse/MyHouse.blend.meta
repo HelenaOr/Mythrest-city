@@ -13,6 +13,8 @@ ModelImporter:
     100010: Desk
     100012: DiningTable
     100014: NightTable
+    100016: Cube
+    100018: Floor
     400000: Bed
     400002: //RootNode
     400004: Walls
@@ -21,6 +23,8 @@ ModelImporter:
     400010: Desk
     400012: DiningTable
     400014: NightTable
+    400016: Cube
+    400018: Floor
     2100000: unnamed
     2100002: Material
     2100004: Bed
@@ -34,6 +38,8 @@ ModelImporter:
     2300008: Desk
     2300010: DiningTable
     2300012: NightTable
+    2300014: Cube
+    2300016: Floor
     3300000: Bed
     3300002: Walls
     3300004: Chair
@@ -41,6 +47,8 @@ ModelImporter:
     3300008: Desk
     3300010: DiningTable
     3300012: NightTable
+    3300014: Cube
+    3300016: Floor
     4300000: Bed
     4300002: Walls
     4300004: Chair
@@ -48,6 +56,8 @@ ModelImporter:
     4300008: Desk
     4300010: DiningTable
     4300012: NightTable
+    4300014: Cube
+    4300016: Floor
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -64,6 +74,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Chair2
+    second: {fileID: 2100000, guid: a54104da0fc5fac44ab5ec97064b3e87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Desk
     second: {fileID: 2100000, guid: 9988f2e5ab6eea34cb3ff132d3b97e63, type: 2}
   - first:
@@ -74,8 +89,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: c84780777f8d4884ea9614e28709151b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Material
     second: {fileID: 2100000, guid: a56c1d5d9487f2749a1ad7656ef5b3de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: 904f49a2b4d51184ca89ec2db93abd5b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

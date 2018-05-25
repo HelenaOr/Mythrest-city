@@ -10,13 +10,13 @@ public class MovingBetweenScenes : MonoBehaviour
 	public DoorCollisions[] doorCollision;
 	public RoadCollisions[] roadCollision;
 
-	public static Vector3 posToSpawnOutside = new Vector3 (-55.3f,4.2f,59.7f);
+	public static Vector3 posToSpawnOutside = new Vector3 (-55.7f,4.2f,68.1f);
 	public static Vector3 posToSpawnInside =  new Vector3 (9.5f,4.2f,55.4f);
 
 	public static Vector3 posToSpawnOnRoadFromFarm = new Vector3 (86f,4.2f,-7.3f);
 	public static Vector3 posToSpawnOnRoadFromVillage = new Vector3 (-86f, 4.2f, -7.3f);
 
-	public static Vector3 posToSpawnOnFarmFromRoad = new Vector3 (-75f,4.2f,-60f);
+	public static Vector3 posToSpawnOnFarmFromRoad = new Vector3 (-78.6f,4.2f,-3.2f);
 
 	public static Vector3 posToSpawnonVillageFromRoad = new Vector3 (-1.2f, 4.2f, -43.5f);
 

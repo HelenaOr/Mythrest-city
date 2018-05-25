@@ -26,6 +26,7 @@ ModelImporter:
     100036: Tree7
     100038: Tree8
     100040: Shop
+    100042: Fence
     400000: Bench1
     400002: Floor
     400004: Fountain
@@ -47,6 +48,7 @@ ModelImporter:
     400036: Tree7
     400038: Tree8
     400040: Shop
+    400042: Fence
     2100000: unnamed
     2100002: Bench
     2100004: House1
@@ -59,6 +61,7 @@ ModelImporter:
     2100018: Wood
     2100020: Leaf
     2100022: Church
+    2100024: Fence
     2300000: Bench1
     2300002: Floor
     2300004: Fountain
@@ -79,6 +82,7 @@ ModelImporter:
     2300034: Tree7
     2300036: Tree8
     2300038: Shop
+    2300040: Fence
     3300000: Bench1
     3300002: Floor
     3300004: Fountain
@@ -99,6 +103,7 @@ ModelImporter:
     3300034: Tree7
     3300036: Tree8
     3300038: Shop
+    3300040: Fence
     4300000: Fountain
     4300002: Bench1
     4300004: House4
@@ -119,6 +124,7 @@ ModelImporter:
     4300034: Tree2
     4300036: Tree1
     4300038: Shop
+    4300040: Fence
     7400000: Default Take
     9500000: //RootNode
   externalObjects:

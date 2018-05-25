@@ -54,7 +54,6 @@ public class NPCBehaviour : MonoBehaviour {
 		} else {
 			if (!alreadygifted) {
 				dialogs = dialogDB.GetDialogsForGifts (myself.name);
-				dialogToSay = dialogs [4];
 				int actualfp = friendshipPoints;
 				while (friendshipPoints == actualfp) {
 					if (myself.favouriteItem == itemCode) {
@@ -80,11 +79,14 @@ public class NPCBehaviour : MonoBehaviour {
 						dialogToSay = dialogs [3];
 					}
 					friendshipPoints += 50;
+					dialogToSay = dialogs [4];
+
 					canvas.transform.Find ("TalkPanel").Find ("TalkText").GetComponent<Text> ().text = dialogToSay;
 				}
 
 
 			} else {
+				dialogs = dialogDB.GetDialogsForGifts (myself.name);
 				dialogToSay = dialogs [5];
 				canvas.transform.Find ("TalkPanel").Find ("TalkText").GetComponent<Text> ().text = dialogToSay;
 			}

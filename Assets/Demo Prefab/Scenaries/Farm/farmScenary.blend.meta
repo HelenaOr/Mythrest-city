@@ -55,7 +55,12 @@ ModelImporter:
     4300012: Terrain
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Terrain1
+    second: {fileID: 2100000, guid: 7a3512a030fc175449eff0c0ecaa41df, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
