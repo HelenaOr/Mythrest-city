@@ -1,0 +1,236 @@
+fileFormatVersion: 2
+guid: e196b3d4ddd479249994d87f6e27d553
+timeCreated: 1527408955
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: bOOK
+    100002: Counter
+    100004: Cylinder
+    100006: Cylinder_001
+    100008: Cylinder_002
+    100010: Cylinder_003
+    100012: Cylinder_004
+    100014: Cylinder_005
+    100016: //RootNode
+    100018: Floor
+    100020: Plane
+    100022: Plane_001
+    100024: Plane_002
+    100026: Plane_003
+    100028: Plane_004
+    100030: Walls_001
+    100032: Bed
+    100034: Chair
+    100036: Desk
+    100038: DiningTable
+    100040: Walls
+    100042: Cube
+    100044: FLoor
+    400000: bOOK
+    400002: Counter
+    400004: Cylinder
+    400006: Cylinder_001
+    400008: Cylinder_002
+    400010: Cylinder_003
+    400012: Cylinder_004
+    400014: Cylinder_005
+    400016: //RootNode
+    400018: Floor
+    400020: Plane
+    400022: Plane_001
+    400024: Plane_002
+    400026: Plane_003
+    400028: Plane_004
+    400030: Walls_001
+    400032: Bed
+    400034: Chair
+    400036: Desk
+    400038: DiningTable
+    400040: Walls
+    400042: Cube
+    400044: FLoor
+    2100000: Cube
+    2100002: Wood
+    2100004: Glass
+    2100006: Walls
+    2100008: Floor
+    2100010: Carcasa
+    2100012: Paper
+    2100014: Detail
+    2100016: Glass_001
+    2100018: VegS
+    2100020: Glass_002
+    2100022: VegS_001
+    2100024: Marco
+    2100026: Purple
+    2100028: Blue
+    2100030: Red
+    2100032: Yellow
+    2100034: Green
+    2100036: Wood_001
+    2100038: Leaf
+    2100040: springBag
+    2100042: SummerBag
+    2100044: FallBag
+    2100046: SpringBag
+    2100048: WinterBag
+    2100050: Wood_002
+    2100052: Iron
+    2100054: Wood_003
+    2100056: Iron_001
+    2100058: Desk
+    2100060: Chair
+    2100062: DinginTable
+    2100064: Bed
+    2100066: Material
+    2100068: unnamed
+    2300000: bOOK
+    2300002: Counter
+    2300004: Cylinder
+    2300006: Cylinder_001
+    2300008: Cylinder_002
+    2300010: Cylinder_003
+    2300012: Cylinder_004
+    2300014: Cylinder_005
+    2300016: Floor
+    2300018: Plane
+    2300020: Plane_001
+    2300022: Plane_002
+    2300024: Plane_003
+    2300026: Plane_004
+    2300028: Walls_001
+    2300030: Bed
+    2300032: Chair
+    2300034: Desk
+    2300036: DiningTable
+    2300038: Walls
+    2300040: Cube
+    2300042: FLoor
+    3300000: bOOK
+    3300002: Counter
+    3300004: Cylinder
+    3300006: Cylinder_001
+    3300008: Cylinder_002
+    3300010: Cylinder_003
+    3300012: Cylinder_004
+    3300014: Cylinder_005
+    3300016: Floor
+    3300018: Plane
+    3300020: Plane_001
+    3300022: Plane_002
+    3300024: Plane_003
+    3300026: Plane_004
+    3300028: Walls_001
+    3300030: Bed
+    3300032: Chair
+    3300034: Desk
+    3300036: DiningTable
+    3300038: Walls
+    3300040: Cube
+    3300042: FLoor
+    4300000: Cylinder_003
+    4300002: Counter
+    4300004: Walls_001
+    4300006: Floor
+    4300008: bOOK
+    4300010: Cylinder
+    4300012: Cylinder_001
+    4300014: Plane
+    4300016: Cylinder_002
+    4300018: Plane_001
+    4300020: Plane_002
+    4300022: Plane_003
+    4300024: Plane_004
+    4300026: Cylinder_004
+    4300028: Cylinder_005
+    4300030: Desk
+    4300032: Chair
+    4300034: DiningTable
+    4300036: Bed
+    4300038: Walls
+    4300040: Cube
+    4300042: FLoor
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -56,6 +56,10 @@ TagManager:
   - sleepingHolder
   - Bed
   - NPC
+  - ShopToVillaje
+  - EmilyHouseToVillaje
+  - VillageToEmilyHouse
+  - VillajeToShop
   layers:
   - Default
   - TransparentFX

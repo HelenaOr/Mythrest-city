@@ -32,3 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoScenes/LoadScene.unity
     guid: 7f0d810c998abea4e85317a7d46b632b
+  - enabled: 1
+    path: Assets/Scenes/DemoScenes/Shop.unity
+    guid: f72e0ee559511a34d85786c807e1b8ec
+  - enabled: 1
+    path: Assets/Scenes/DemoScenes/EmilyHouse.unity
+    guid: 906c3568fbf25204685a052fbe4cddcd

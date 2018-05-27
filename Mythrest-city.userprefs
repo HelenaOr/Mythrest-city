@@ -1,6 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Colliders\DoorCollisions.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\MovingBetweenScenes.cs">
     <Files>
       <File FileName="Assets\Scripts\ToolBehaviours\Hoe.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\PlayerActions.cs" Line="1" Column="1" />
@@ -17,7 +17,7 @@
       <File FileName="Assets\Scripts\SceneLoader\GameButton.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\PlayerMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Inventory\InventoryButtons.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\MovingBetweenScenes.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\MovingBetweenScenes.cs" Line="61" Column="36" />
       <File FileName="Assets\Scripts\Colliders\DoorCollisions.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
