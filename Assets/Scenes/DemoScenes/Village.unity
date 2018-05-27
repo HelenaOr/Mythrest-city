@@ -286,6 +286,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.724138, y: 3.7000833, z: 19.477398}
   m_Center: {x: -0.3786273, y: 0.45479226, z: 5.452343}
+--- !u!1 &754251153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 754251154}
+  - component: {fileID: 754251156}
+  - component: {fileID: 754251155}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: VillageToLilyTylerHouse
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &754251154
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 754251153}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 67.8, y: -41.600014, z: 3.200016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2093913437}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &754251155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 754251153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f9652209837c040bad1db4cccc49ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collision: 0
+--- !u!65 &754251156
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 754251153}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.724138, y: 3.7000833, z: 19.477398}
+  m_Center: {x: -0.3786273, y: 0.45479226, z: 5.452343}
 --- !u!1 &1232880197
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +394,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collision: 0
+--- !u!1 &1461372788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1461372789}
+  - component: {fileID: 1461372791}
+  - component: {fileID: 1461372790}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: VillageToRileyHouse
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1461372789
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1461372788}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 26, y: 27.5, z: 3.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2093913443}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1461372790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1461372788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f9652209837c040bad1db4cccc49ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collision: 0
+--- !u!65 &1461372791
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1461372788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.724138, y: 3.7000833, z: 19.477398}
+  m_Center: {x: -0.3786273, y: 0.45479226, z: 5.452343}
 --- !u!1 &1678510533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1415,10 @@ BoxCollider:
 Transform:
   m_PrefabParentObject: {fileID: 400006, guid: a2943743f9b588645a41d2f9f9055b63, type: 3}
   m_PrefabInternal: {fileID: 2093913415}
+--- !u!4 &2093913437 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400010, guid: a2943743f9b588645a41d2f9f9055b63, type: 3}
+  m_PrefabInternal: {fileID: 2093913415}
 --- !u!65 &2093913438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1358,4 +1470,8 @@ BoxCollider:
 --- !u!4 &2093913442 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400042, guid: a2943743f9b588645a41d2f9f9055b63, type: 3}
+  m_PrefabInternal: {fileID: 2093913415}
+--- !u!4 &2093913443 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400008, guid: a2943743f9b588645a41d2f9f9055b63, type: 3}
   m_PrefabInternal: {fileID: 2093913415}

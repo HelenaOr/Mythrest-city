@@ -60,6 +60,10 @@ TagManager:
   - EmilyHouseToVillaje
   - VillageToEmilyHouse
   - VillajeToShop
+  - RileyHouseToVillage
+  - LilyTylerHouseToVillage
+  - VillageToLilyTylerHouse
+  - VillageToRileyHouse
   layers:
   - Default
   - TransparentFX

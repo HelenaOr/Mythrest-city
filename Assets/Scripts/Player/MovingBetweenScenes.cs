@@ -21,10 +21,13 @@ public class MovingBetweenScenes : MonoBehaviour
 	public static Vector3 posToSpawnonVillageFromRoad = new Vector3 (0.0f, 4.2f, -41.8f);
 	public static Vector3 posToSpawnOnVillageFromShop = new Vector3 (64.7f, 4.2f, -43.77f);
 	public static Vector3 posToSpawnOnVillageFromEmilyHouse = new Vector3 (-69f, 4.2f, 26.35f);
+	public static Vector3 posToSpawnOnVillageFromRyleyHouse = new Vector3 (-25.9f,4.2f,27f);
+	public static Vector3 posToSpawnOnVillageFromLilyTylerHouse = new Vector3 (-68.2f,4.2f,-43.3f);
 
 	public static Vector3 posToSpawnOnShop = new Vector3 (-5.3f, 4.2f, -31.8f);
-
 	public static Vector3 posToSpawnOnEmilyHouse = new Vector3 (-20.7f, 4.2f, -25f);
+	public static Vector3 posToSpawnOnRileyHouse = new Vector3 (-9.66f, 4.2f, -28.22f);
+	public static Vector3 posToSpawnOnLilyTylerHouse = new Vector3(-19.7f,4.2f,-26.27f);
 
 	// Use this for initialization
 	void Start ()
@@ -60,13 +63,25 @@ public class MovingBetweenScenes : MonoBehaviour
 						player.transform.position = posToSpawnOnShop;
 						SceneManager.LoadScene ("Shop");
 					}else if (col.tag == "VillageToEmilyHouse") {
-						player.transform.position = posToSpawnOnShop;
+						player.transform.position = posToSpawnOnEmilyHouse;
 						SceneManager.LoadScene ("EmilyHouse");
+					}else if (col.tag == "VillageToRileyHouse") {
+						player.transform.position = posToSpawnOnRileyHouse;
+						SceneManager.LoadScene ("RileyHouse");
+					}else if (col.tag == "VillageToLilyTylerHouse") {
+						player.transform.position = posToSpawnOnLilyTylerHouse;
+						SceneManager.LoadScene ("LilyTylerHouse");
 					}else if (col.tag == "ShopToVillaje") {
 						player.transform.position = posToSpawnOnVillageFromShop;
 						SceneManager.LoadScene ("Village");
 					}else if (col.tag == "EmilyHouseToVillaje") {
 						player.transform.position = posToSpawnOnVillageFromEmilyHouse;
+						SceneManager.LoadScene ("Village");
+					}else if (col.tag == "LilyTylerHouseToVillage") {
+						player.transform.position = posToSpawnOnVillageFromLilyTylerHouse;
+						SceneManager.LoadScene ("Village");
+					}else if (col.tag == "RileyHouseToVillage") {
+						player.transform.position = posToSpawnOnVillageFromRyleyHouse;
 						SceneManager.LoadScene ("Village");
 					}
 				}
