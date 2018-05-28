@@ -7,6 +7,8 @@ public class MovingBetweenScenes : MonoBehaviour
 {
 
 	public GameObject player;
+	public GameObject[] allNPCs;
+	public TimeManager timeManager;
 	public DoorCollisions[] doorCollision;
 	public RoadCollisions[] roadCollision;
 
@@ -115,6 +117,30 @@ public class MovingBetweenScenes : MonoBehaviour
 		}
 	}
 
+
+
+	void OnEnable(){
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+	void OnDisable(){
+		SceneManager.sceneLoaded -= OnSceneLoaded;
+
+	}
+
+	void OnSceneLoaded(Scene scene, LoadSceneMode mode){
+		allNPCs = GameObject.FindGameObjectsWithTag ("NPC");
+		timeManager = FindObjectOfType (typeof(TimeManager)) as TimeManager;
+		if (SceneManager.GetActiveScene ().name.Equals ("Village")) {
+			if (timeManager.getHours () >= 7.0f) {
+				foreach (GameObject npc in allNPCs) {
+					if (npc.GetComponent<NPCBehaviour> ().myself.name == "Lily") {
+						npc.SetActive (false);
+						break;
+					}
+				}
+			}
+		}
+	}
 
 
 }

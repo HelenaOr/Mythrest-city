@@ -87,6 +87,7 @@
      <Compile Include="Assets\Scripts\NPC\MockNPCDialog.cs" />
      <Compile Include="Assets\Scripts\NPC\NPC.cs" />
      <Compile Include="Assets\Scripts\NPC\NPCBehaviour.cs" />
+     <Compile Include="Assets\Scripts\NPC\NPCMovement.cs" />
      <Compile Include="Assets\Scripts\Player\MovingBetweenScenes.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerActions.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerFriendship.cs" />

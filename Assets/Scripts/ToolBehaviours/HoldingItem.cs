@@ -25,8 +25,14 @@ public class HoldingItem : MonoBehaviour {
 
 	public void Gift(int code){
 		inventoryManager = GetComponent<InventoryManager> ();
-		inventoryManager.removeItem (code);
-		Destroy (item);
+
+		if (inventoryManager.getItem (code).quantity == 1) {
+			inventoryManager.removeItem (code);
+			Destroy (item);
+		} else {
+			inventoryManager.getItem (code).quantity -= 1;
+		}
+
 		holdingItem = false;
 		itemCode = -1;
 	}

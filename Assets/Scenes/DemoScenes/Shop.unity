@@ -210,6 +210,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &575323333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 575323335}
+  - component: {fileID: 575323334}
+  m_Layer: 0
+  m_Name: Directional Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &575323334
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 575323333}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 0.5
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &575323335
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 575323333}
+  m_LocalRotation: {x: 0.47014424, y: -0.025083996, z: 0.49270573, w: 0.73183084}
+  m_LocalPosition: {x: -78, y: 3, z: -45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 45.467003, y: 37.463, z: 84.074005}
 --- !u!1 &676942994
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +301,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -244,7 +309,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.5
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -321,6 +386,68 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f61ac935efa53047a81bb52ac4a5430, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1184716127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1184716130}
+  - component: {fileID: 1184716129}
+  - component: {fileID: 1184716128}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1184716128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1184716127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1184716129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1184716127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
+--- !u!4 &1184716130
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1184716127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1301256947
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +591,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -3.6
       objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: ca6ce36ed644eef49b7f767c539e23d6, type: 3}
+      propertyPath: m_TagString
+      value: shopCounter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca6ce36ed644eef49b7f767c539e23d6, type: 3}
   m_IsPrefabParent: 0
@@ -519,3 +650,148 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 65.99998, y: 66, z: 3.0000029}
   m_Center: {x: -7.0966063, y: 11.562465, z: -5.3897676}
+--- !u!114 &1389853011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1389853006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bf0f430b49fe94bab6de9695a41419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collision: 0
+--- !u!114 &1389853012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1389853006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce817751a3ab934e8959d644f00ba6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  shopCanvas: {fileID: 0}
+--- !u!114 &1389853013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1389853006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6ccbf112c598043b103da6f53b2450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnipSeeds:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  cabbageSeeds:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  cherryTreeSeeds:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  carrotSeeds:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  onionSeeds:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  peachTreeSeeds:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  radishSeeds:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  spinachSeeds:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  appleTreeSeeds:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  daikonradishSeeds:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  broccoliSeeds:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  orangeTreeSeeds:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  vegetableSmoothie:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  fruitSmoothie:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  wine:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  bracelet:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  book:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  photo:
+    name: 
+    description: 
+    code: 0
+    price: 0
+    itemType: 0
+  items: []

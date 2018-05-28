@@ -23,6 +23,7 @@ public class ShopManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (this.GetComponent<ShopCollision> ().collision && Input.GetKey (KeyCode.E)) {
+			Debug.Log ("sHOW");
 			shopCanvas.gameObject.SetActive (true);
 		}
 	}

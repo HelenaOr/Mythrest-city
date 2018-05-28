@@ -12,6 +12,12 @@ public class MockNPCDialog : MonoBehaviour {
 	public List<string> rileyLowFriendshipDialogs;
 	public List<string> rileyMediumFriendshipDialogs;
 	public List<string> rileyHighFriendshipDialogs;
+	public List<string> rileyThanksDialogs;
+
+	public List<string> lilyLowFriendshipDialogs;
+	public List<string> lilyMediumFriendshipDialogs;
+	public List<string> lilyHighFriendshipDialogs;
+	public List<string> lilyThanksDialogs;
 
 	// Use this for initialization
 	void Start () {
@@ -46,6 +52,36 @@ public class MockNPCDialog : MonoBehaviour {
 		rileyHighFriendshipDialogs.Add ("I was born in this village and always wanted to get out of here, but with you around here life is more interesting.");
 		rileyHighFriendshipDialogs.Add ("Life here is calm, I wish I had appreciated it before.");
 		rileyHighFriendshipDialogs.Add ("Do you like spending time with me? I have a lot of fun hanging out with you.");
+
+		rileyThanksDialogs.Add ("You really get me well uh, I really love wine, thanks.");//0
+		rileyThanksDialogs.Add ("My thanks are in order, I like this.");//1
+		rileyThanksDialogs.Add ("You have no taste.");//2
+		rileyThanksDialogs.Add ("Come on, I'm allergic to peach, do you want to kill me!?");//3
+		rileyThanksDialogs.Add ("Since it's a gift I will accept it.");//4
+		rileyThanksDialogs.Add("Didn't you gift me something already? I can't accept it.");//5
+
+		//LILY//
+		lilyLowFriendshipDialogs.Add("Hello, how is your day going? Don't exhaust yourself too much.");
+		lilyLowFriendshipDialogs.Add ("Tyler is my son, he is a good kid. He likes you, speak to him once in a while.");
+		lilyLowFriendshipDialogs.Add ("This village is as peaceful as ever, I love being here.");
+
+		lilyMediumFriendshipDialogs.Add ("My husband is working in another town, Tyler and I miss him greatly.");
+		lilyMediumFriendshipDialogs.Add ("You are a good kid, I'm glad you came here.");
+		lilyMediumFriendshipDialogs.Add ("Things have become livelier since you came here, it's pretty good. Thank you.");
+
+		lilyHighFriendshipDialogs.Add ("You have a brilliant future, I can tell by simply looking at you.");
+		lilyHighFriendshipDialogs.Add ("I don't know what will I do when Tyler grows up, he's a whole to me");
+		lilyHighFriendshipDialogs.Add ("The village has become a better place with you here, it's a pleasure helping you out.");
+
+		lilyThanksDialogs.Add("Is that a fruit smoothie!? I LOVE IT. Thank you very much dear.");
+		lilyThanksDialogs.Add("I really like it, thank you");
+		lilyThanksDialogs.Add("Guess I should say thanks");
+		lilyThanksDialogs.Add ("What are you thinking giving me somthing like that!");
+		lilyThanksDialogs.Add ("Broccoly? Really? What's your problem kid...");
+		lilyThanksDialogs.Add ("I can't accept anything more today.");
+
+		//TYLER//
+
 
 
 	}
