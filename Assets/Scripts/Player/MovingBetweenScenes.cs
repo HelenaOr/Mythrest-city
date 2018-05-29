@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class MovingBetweenScenes : MonoBehaviour
 {
@@ -12,24 +13,24 @@ public class MovingBetweenScenes : MonoBehaviour
 	public DoorCollisions[] doorCollision;
 	public RoadCollisions[] roadCollision;
 
-	public static Vector3 posToSpawnOutside = new Vector3 (-56.86f,4.2f,71.21f);
-	public static Vector3 posToSpawnInside =  new Vector3 (9.5f,4.2f,55.4f);
+	public static Vector3 posToSpawnOutside = new Vector3 (-56.86f, 4.2f, 71.21f);
+	public static Vector3 posToSpawnInside = new Vector3 (9.5f, 4.2f, 55.4f);
 
-	public static Vector3 posToSpawnOnRoadFromFarm = new Vector3 (86f,4.2f,-7.3f);
+	public static Vector3 posToSpawnOnRoadFromFarm = new Vector3 (86f, 4.2f, -7.3f);
 	public static Vector3 posToSpawnOnRoadFromVillage = new Vector3 (-86f, 4.2f, -7.3f);
 
-	public static Vector3 posToSpawnOnFarmFromRoad = new Vector3 (-78.6f,4.2f,-3.2f);
+	public static Vector3 posToSpawnOnFarmFromRoad = new Vector3 (-78.6f, 4.2f, -3.2f);
 
 	public static Vector3 posToSpawnonVillageFromRoad = new Vector3 (0.0f, 4.2f, -41.8f);
 	public static Vector3 posToSpawnOnVillageFromShop = new Vector3 (64.7f, 4.2f, -43.77f);
 	public static Vector3 posToSpawnOnVillageFromEmilyHouse = new Vector3 (-69f, 4.2f, 26.35f);
-	public static Vector3 posToSpawnOnVillageFromRyleyHouse = new Vector3 (-25.9f,4.2f,27f);
-	public static Vector3 posToSpawnOnVillageFromLilyTylerHouse = new Vector3 (-68.2f,4.2f,-43.3f);
+	public static Vector3 posToSpawnOnVillageFromRyleyHouse = new Vector3 (-25.9f, 4.2f, 27f);
+	public static Vector3 posToSpawnOnVillageFromLilyTylerHouse = new Vector3 (-68.2f, 4.2f, -43.3f);
 
 	public static Vector3 posToSpawnOnShop = new Vector3 (-5.3f, 4.2f, -31.8f);
 	public static Vector3 posToSpawnOnEmilyHouse = new Vector3 (-20.7f, 4.2f, -25f);
 	public static Vector3 posToSpawnOnRileyHouse = new Vector3 (-9.66f, 4.2f, -28.22f);
-	public static Vector3 posToSpawnOnLilyTylerHouse = new Vector3(-19.7f,4.2f,-26.27f);
+	public static Vector3 posToSpawnOnLilyTylerHouse = new Vector3 (-19.7f, 4.2f, -26.27f);
 
 	// Use this for initialization
 	void Start ()
@@ -64,25 +65,25 @@ public class MovingBetweenScenes : MonoBehaviour
 					} else if (col.tag == "VillajeToShop") {
 						player.transform.position = posToSpawnOnShop;
 						SceneManager.LoadScene ("Shop");
-					}else if (col.tag == "VillageToEmilyHouse") {
+					} else if (col.tag == "VillageToEmilyHouse") {
 						player.transform.position = posToSpawnOnEmilyHouse;
 						SceneManager.LoadScene ("EmilyHouse");
-					}else if (col.tag == "VillageToRileyHouse") {
+					} else if (col.tag == "VillageToRileyHouse") {
 						player.transform.position = posToSpawnOnRileyHouse;
 						SceneManager.LoadScene ("RileyHouse");
-					}else if (col.tag == "VillageToLilyTylerHouse") {
+					} else if (col.tag == "VillageToLilyTylerHouse") {
 						player.transform.position = posToSpawnOnLilyTylerHouse;
 						SceneManager.LoadScene ("LilyTylerHouse");
-					}else if (col.tag == "ShopToVillaje") {
+					} else if (col.tag == "ShopToVillaje") {
 						player.transform.position = posToSpawnOnVillageFromShop;
 						SceneManager.LoadScene ("Village");
-					}else if (col.tag == "EmilyHouseToVillaje") {
+					} else if (col.tag == "EmilyHouseToVillaje") {
 						player.transform.position = posToSpawnOnVillageFromEmilyHouse;
 						SceneManager.LoadScene ("Village");
-					}else if (col.tag == "LilyTylerHouseToVillage") {
+					} else if (col.tag == "LilyTylerHouseToVillage") {
 						player.transform.position = posToSpawnOnVillageFromLilyTylerHouse;
 						SceneManager.LoadScene ("Village");
-					}else if (col.tag == "RileyHouseToVillage") {
+					} else if (col.tag == "RileyHouseToVillage") {
 						player.transform.position = posToSpawnOnVillageFromRyleyHouse;
 						SceneManager.LoadScene ("Village");
 					}
@@ -94,7 +95,8 @@ public class MovingBetweenScenes : MonoBehaviour
 
 	}
 
-	void roadMovement(){
+	void roadMovement ()
+	{
 		roadCollision = GameObject.FindObjectsOfType<RoadCollisions> ();
 
 		foreach (RoadCollisions col in roadCollision) {
@@ -119,27 +121,82 @@ public class MovingBetweenScenes : MonoBehaviour
 
 
 
-	void OnEnable(){
+	void OnEnable ()
+	{
 		SceneManager.sceneLoaded += OnSceneLoaded;
 	}
-	void OnDisable(){
+
+	void OnDisable ()
+	{
 		SceneManager.sceneLoaded -= OnSceneLoaded;
 
 	}
 
-	void OnSceneLoaded(Scene scene, LoadSceneMode mode){
-		allNPCs = GameObject.FindGameObjectsWithTag ("NPC");
+	void OnSceneLoaded (Scene scene, LoadSceneMode mode)
+	{
+		
 		timeManager = FindObjectOfType (typeof(TimeManager)) as TimeManager;
 		if (SceneManager.GetActiveScene ().name.Equals ("Village")) {
-			if (timeManager.getHours () >= 7.0f) {
-				foreach (GameObject npc in allNPCs) {
-					if (npc.GetComponent<NPCBehaviour> ().myself.name == "Lily") {
+			Debug.Log (SceneManager.GetActiveScene ().name);
+			allNPCs = GameObject.FindGameObjectsWithTag ("NPC");
+
+			foreach (GameObject npc in allNPCs) {
+
+				if (npc.name.Contains ("Emily")) {
+
+					if (timeManager.getHours () >= 7.0f && timeManager.getHours () <= 19.0f) {
+						npc.SetActive (true);
+					} else {
 						npc.SetActive (false);
-						break;
 					}
+
 				}
+					
 			}
+			
 		}
+
+		if (SceneManager.GetActiveScene ().name.Equals ("EmilyHouse")) {
+			Debug.Log (SceneManager.GetActiveScene ().name);
+			allNPCs = GameObject.FindGameObjectsWithTag ("NPC");
+
+			foreach (GameObject npc in allNPCs) {
+
+				if (npc.name.Contains ("Emily")) {
+
+					if (timeManager.getHours () >= 9.0f && timeManager.getHours () <= 19.0f) {
+						npc.SetActive (false);
+					} else {
+						npc.SetActive (true);
+					}
+
+				}
+
+			}
+
+		}
+
+//		if (SceneManager.GetActiveScene ().name.Equals ("Shop")) {
+//			Debug.Log (SceneManager.GetActiveScene ().name);
+//			allNPCs = GameObject.FindGameObjectsWithTag ("NPC");
+//			foreach (GameObject npc in allNPCs) {
+//				if (timeManager.getHours () >= 9.0f && timeManager.getHours () <= 17.0f) {
+//					if (npc.name.Contains("Lily")) {
+//						Debug.Log ("Selling");
+//						npc.SetActive (true);
+//						break;
+//					}
+//				} else {
+//					if (npc.name.Contains("Lily")) {
+//						Debug.Log ("Outside");
+//						npc.SetActive (false);
+//						break;
+//					}
+//				}
+//					
+//			}
+//
+//		}
 	}
 
 

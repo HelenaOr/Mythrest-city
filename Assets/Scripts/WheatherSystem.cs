@@ -8,6 +8,7 @@ public class WheatherSystem : MonoBehaviour
 {
 
 	public ParticleSystem rainSystem;
+	public ParticleSystem snowSystem;
 	public TimeManager timeManager;
 	// Use this for initialization
 	void Start ()
@@ -16,17 +17,30 @@ public class WheatherSystem : MonoBehaviour
 		timeManager = GameObject.FindGameObjectWithTag ("TimeManager").GetComponent<TimeManager> ();
 
 		if (timeManager.getWeather ().Equals (TimeManager.weather.RAIN) || timeManager.getWeather ().Equals (TimeManager.weather.RAINSTORM)) {
-			Debug.Log ("entro");
-			if (SceneManager.GetActiveScene ().name.Contains ("Inside")) {
+			if (SceneManager.GetActiveScene ().name.Contains ("Inside") || SceneManager.GetActiveScene ().name.Contains ("House") || SceneManager.GetActiveScene ().name.Contains ("Shop")) {
 				rainSystem.gameObject.SetActive (false);
+				snowSystem.gameObject.SetActive (false);
 				Debug.Log ("Inside");
 			} else {
 				rainSystem.gameObject.SetActive (true);
-				Debug.Log ("Outside");
+				snowSystem.gameObject.SetActive (false);
+
 			}
 
-		} else {
+		} else if(timeManager.getWeather ().Equals (TimeManager.weather.SNOW) || timeManager.getWeather ().Equals (TimeManager.weather.SNOWSTORM)){
+			if (SceneManager.GetActiveScene ().name.Contains ("Inside") || SceneManager.GetActiveScene ().name.Contains ("House") || SceneManager.GetActiveScene ().name.Contains ("Shop")) {
+				rainSystem.gameObject.SetActive (false);
+				snowSystem.gameObject.SetActive (false);
+				Debug.Log ("Inside");
+			} else {
+				rainSystem.gameObject.SetActive (false);
+				snowSystem.gameObject.SetActive (true);
+
+			}
+		}
+		else {
 			rainSystem.gameObject.SetActive (false);
+			snowSystem.gameObject.SetActive (false);
 		}
 	}
 	
@@ -40,17 +54,32 @@ public class WheatherSystem : MonoBehaviour
 	{
 		timeManager = GameObject.FindGameObjectWithTag ("TimeManager").GetComponent<TimeManager> ();
 
+
 		if (timeManager.getWeather ().Equals (TimeManager.weather.RAIN) || timeManager.getWeather ().Equals (TimeManager.weather.RAINSTORM)) {
-			if (SceneManager.GetActiveScene ().name.Contains ("Inside")) {
+			if (SceneManager.GetActiveScene ().name.Contains ("Inside") || SceneManager.GetActiveScene ().name.Contains ("House") || SceneManager.GetActiveScene ().name.Contains ("Shop")) {
 				rainSystem.gameObject.SetActive (false);
+				snowSystem.gameObject.SetActive (false);
 				Debug.Log ("Inside");
 			} else {
 				rainSystem.gameObject.SetActive (true);
-				Debug.Log ("Outside");
+				snowSystem.gameObject.SetActive (false);
+
 			}
-				
-		} else {
+
+		} else if(timeManager.getWeather ().Equals (TimeManager.weather.SNOW) || timeManager.getWeather ().Equals (TimeManager.weather.SNOWSTORM)){
+			if (SceneManager.GetActiveScene ().name.Contains ("Inside") || SceneManager.GetActiveScene ().name.Contains ("House") || SceneManager.GetActiveScene ().name.Contains ("Shop")) {
+				rainSystem.gameObject.SetActive (false);
+				snowSystem.gameObject.SetActive (false);
+				Debug.Log ("Inside");
+			} else {
+				rainSystem.gameObject.SetActive (false);
+				snowSystem.gameObject.SetActive (true);
+
+			}
+		}
+		else {
 			rainSystem.gameObject.SetActive (false);
+			snowSystem.gameObject.SetActive (false);
 		}
 	}
 

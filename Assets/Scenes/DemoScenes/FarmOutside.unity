@@ -1089,6 +1089,7 @@ MonoBehaviour:
   blackberry: {fileID: 0}
   gojiberry: {fileID: 0}
   branch: {fileID: 0}
+  season: 0
 --- !u!1 &207035491
 GameObject:
   m_ObjectHideFlags: 0
@@ -3426,7 +3427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &756256483
 Transform:
   m_ObjectHideFlags: 0
@@ -3554,7 +3555,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1154535227
+  randomSeed: 125934828
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -12997,6 +12998,7 @@ MonoBehaviour:
   blackberry: {fileID: 0}
   gojiberry: {fileID: 0}
   branch: {fileID: 0}
+  season: 0
 --- !u!1 &1379396291
 GameObject:
   m_ObjectHideFlags: 0
@@ -13388,6 +13390,7 @@ MonoBehaviour:
   blackberry: {fileID: 0}
   gojiberry: {fileID: 0}
   branch: {fileID: 0}
+  season: 0
 --- !u!1 &1456285838
 GameObject:
   m_ObjectHideFlags: 0
@@ -13461,6 +13464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rainSystem: {fileID: 977404786}
+  snowSystem: {fileID: 756256485}
   timeManager: {fileID: 0}
 --- !u!1 &1476096862
 GameObject:
@@ -15467,6 +15471,7 @@ MonoBehaviour:
   blackberry: {fileID: 0}
   gojiberry: {fileID: 0}
   branch: {fileID: 0}
+  season: 0
 --- !u!1 &1858164495
 GameObject:
   m_ObjectHideFlags: 0

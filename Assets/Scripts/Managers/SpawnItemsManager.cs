@@ -15,10 +15,12 @@ public class SpawnItemsManager : MonoBehaviour
 	public GameObject branch;
 
 	TimeManager timeManager;
+
+	public TimeManager.seasons season;
 	// Use this for initialization
 	void Start ()
 	{
-		timeManager = FindObjectOfType (typeof(TimeManager)) as TimeManager;
+		
 
 		spawnCenter = GetComponent<Transform> ();
 
@@ -36,7 +38,8 @@ public class SpawnItemsManager : MonoBehaviour
 
 	public void Spawn ()
 	{
-		
+		timeManager = FindObjectOfType (typeof(TimeManager)) as TimeManager;
+		season = timeManager.getSeason ();
 		for (int i = 0; i < numberOfObjects; i++) {
 			
 			Vector3 pos = SpawnRadius (spawnCenter.position, 8.0f);
@@ -126,9 +129,4 @@ public class SpawnItemsManager : MonoBehaviour
 
 	}
 
-	// Update is called once per frame
-	void Update ()
-	{
-		
-	}
 }

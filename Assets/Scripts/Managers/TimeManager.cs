@@ -36,7 +36,7 @@ public class TimeManager : MonoBehaviour {
 	void Start(){
 		weatherSystem = FindObjectOfType (typeof(WheatherSystem)) as WheatherSystem;
 		setWeather ();
-		
+
 	}
 	// Update is called once per frame
 	void Update () {
