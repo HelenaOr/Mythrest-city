@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using NUnit.Framework.Internal.Commands;
 
 public class InventoryManager : MonoBehaviour
 {

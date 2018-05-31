@@ -24,18 +24,24 @@ public class ShippingBinButtons : MonoBehaviour {
 		startFunction ();
 	}
 
+	void OnDisable(){
+		content = this.GetComponentInChildren<ScrollRect> ().content;
+		children = this.GetComponentInChildren<ScrollRect> ().content.childCount;
+		prefabs = new GameObject[children];
+
+		for (int i = 0; i <children ; i++) {
+
+			prefabs [i] = content.GetChild (i).gameObject;
+
+		}
+	}
+
 	void sellItem(int code,Button b){
 
 		InventoryItem item = inventory.getItem (code);
-		if (item.quantity <= 1) {
-			item.quantity -= 1;
-			inventory.removeItem (code);
-			playerGold.gainMoney (item.sellPrice);
-			Destroy (b.transform.parent.gameObject);
-		} else {
-			item.quantity -= 1;
-			playerGold.gainMoney (item.sellPrice);
-		}
+		playerGold.gainMoney (item.sellPrice* item.quantity);
+		inventory.removeItem (code);
+		Destroy (b.transform.parent.gameObject);
 
 		updateButtonText (item, b);
 	}
@@ -63,12 +69,21 @@ public class ShippingBinButtons : MonoBehaviour {
 		}
 		//////////////////////////////////////////////////////////////////////////////
 
+
+		foreach (GameObject prefab in prefabs) {
+			Button b = prefab.GetComponentInChildren<Button> ();
+
+			b.onClick.RemoveAllListeners ();
+		}
+
 		foreach (GameObject prefab in prefabs) {
 			Button b = prefab.GetComponentInChildren<Button> ();
 			int code = b.GetComponent<ShippingBinButtonItemCode> ().code;
 			b.onClick.AddListener (() => sellItem (code,b));
 		}
+
 	}
+
 
 	void Exit(){
 		Time.timeScale = 1.0f;

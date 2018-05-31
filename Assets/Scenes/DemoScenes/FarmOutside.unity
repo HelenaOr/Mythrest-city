@@ -12792,6 +12792,10 @@ Prefab:
       propertyPath: moneyCanvas
       value: 
       objectReference: {fileID: 358577664}
+    - target: {fileID: 1948179660953778, guid: 7fa95ac3e3c8e8e4e901f8bb36a1fdcb, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fa95ac3e3c8e8e4e901f8bb36a1fdcb, type: 2}
   m_IsPrefabParent: 0
@@ -14315,6 +14319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3663fcfa3ea0eca4d86acec201da03b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  im: []
 --- !u!114 &1615374874
 MonoBehaviour:
   m_ObjectHideFlags: 0

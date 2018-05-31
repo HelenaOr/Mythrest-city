@@ -7,7 +7,7 @@ public class ShowShippingBin : MonoBehaviour
 {
 
 	ShippingBinButtons shippingBinButtons;
-	List<InventoryItem> im = new List<InventoryItem>();
+	public List<InventoryItem> im = new List<InventoryItem>();
 	void OnEnable ()
 	{
 		showShippingBin ();
@@ -20,6 +20,8 @@ public class ShowShippingBin : MonoBehaviour
 			Destroy (content.GetChild (i).gameObject);
 		}
 
+
+
 	}
 
 	public void showShippingBin ()
@@ -27,8 +29,9 @@ public class ShowShippingBin : MonoBehaviour
 		shippingBinButtons = FindObjectOfType (typeof(ShippingBinButtons)) as ShippingBinButtons;
 		List<InventoryItem> imAUX = GameObject.FindGameObjectWithTag ("Player").GetComponent<InventoryManager> ().items;
 		InventoryManager inventory = GameObject.FindGameObjectWithTag ("Player").GetComponent<InventoryManager> ();
+		im = new List<InventoryItem>();
 		foreach (InventoryItem aux in imAUX) {
-			if (!aux.inventoryType.Equals (InventoryItem.inventoryTypes.TOOL)) {
+			if (!aux.inventoryType.Equals (InventoryItem.inventoryTypes.TOOL) &&!aux.inventoryType.Equals (InventoryItem.inventoryTypes.NONE)  ) {
 				im.Add (aux);
 			}
 		}
@@ -78,6 +81,7 @@ public class ShowShippingBin : MonoBehaviour
 	}
 
 	public InventoryItem getShippingBinItem(int code){
+		
 		for (int i = 0; i < im.Count; i++) {
 			if (im [i].code == code) {
 				return im [i];

@@ -5,18 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Outside.unity
     guid: 8eddf844e4bbaa94582c8604da02e14a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Inside.unity
     guid: d9139ffc0adfb4a4bbe70cd3e8e19d09
   - enabled: 0
     path: 
-    guid: 81a892724de86d64e970e6277dcb8ba4
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
-    guid: 3c574b32d55a9664e99aaf480b820a56
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/DemoScenes/LoadScene.unity
+    guid: 7f0d810c998abea4e85317a7d46b632b
   - enabled: 1
     path: Assets/Scenes/DemoScenes/FarmOutside.unity
     guid: a5c6a004fa6224e42a8b32446a3e6449
@@ -29,9 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoScenes/Village.unity
     guid: e055d11e347a8084490e3646a30a3867
-  - enabled: 1
-    path: Assets/Scenes/DemoScenes/LoadScene.unity
-    guid: 7f0d810c998abea4e85317a7d46b632b
   - enabled: 1
     path: Assets/Scenes/DemoScenes/Shop.unity
     guid: f72e0ee559511a34d85786c807e1b8ec

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine.UI;
 
 public class PlayerActions : MonoBehaviour
@@ -166,6 +168,7 @@ public class PlayerActions : MonoBehaviour
 					
 			} if (tool.Equals (Tools.HOE)) {
 				if (Input.GetMouseButtonDown (1)) {
+
 					hoeGO.SetActive (true);
 					hoeGO.GetComponent<Animator> ().SetBool ("isPlowing", true);
 					anim.SetBool ("isPlowing", true);
@@ -229,6 +232,8 @@ public class PlayerActions : MonoBehaviour
 		hoeGO.GetComponent<Animator> ().SetBool ("isPlowing", false);
 		anim.SetBool ("isPlowing", false);
 		hoeGO.SetActive (false);
+
+
 	
 	}
 
