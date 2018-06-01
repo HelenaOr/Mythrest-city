@@ -70,6 +70,7 @@ public class PlayerActions : MonoBehaviour
 
 	public Canvas ToolCanvas;
 	public Canvas InventoryView;
+	public Transform pauseMenu;
 	public InventoryManager inventory;
 
 	PlayerStamina playerStamina;
@@ -117,6 +118,11 @@ public class PlayerActions : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+
+		if (Input.GetKey (KeyCode.Escape)) {
+			pauseMenu.gameObject.SetActive (true);
+			Time.timeScale = 0.0f;
+		}
 
 		if (holdingItem.holdingItem) {
 

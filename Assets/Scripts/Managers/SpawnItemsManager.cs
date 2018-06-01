@@ -24,11 +24,7 @@ public class SpawnItemsManager : MonoBehaviour
 
 		spawnCenter = GetComponent<Transform> ();
 
-		apricot = Resources.Load<GameObject> ("SpawnItems/Apricot");
-		plum = Resources.Load<GameObject> ("SpawnItems/Plum");
-		blackberry = Resources.Load<GameObject> ("SpawnItems/BlackBerry");
-		gojiberry = Resources.Load<GameObject> ("SpawnItems/GojiBerry");
-		branch = Resources.Load<GameObject> ("SpawnItems/Branch");
+		LoadResources ();
 
 		Spawn ();
 
@@ -36,8 +32,18 @@ public class SpawnItemsManager : MonoBehaviour
 
 	}
 
+
+	void LoadResources(){
+		apricot = Resources.Load<GameObject> ("SpawnItems/Apricot");
+		plum = Resources.Load<GameObject> ("SpawnItems/Plum");
+		blackberry = Resources.Load<GameObject> ("SpawnItems/BlackBerry");
+		gojiberry = Resources.Load<GameObject> ("SpawnItems/GojiBerry");
+		branch = Resources.Load<GameObject> ("SpawnItems/Branch");
+	}
+
 	public void Spawn ()
 	{
+		LoadResources ();
 		timeManager = FindObjectOfType (typeof(TimeManager)) as TimeManager;
 		season = timeManager.getSeason ();
 		for (int i = 0; i < numberOfObjects; i++) {
@@ -65,12 +71,12 @@ public class SpawnItemsManager : MonoBehaviour
 				int random = Random.Range (1, 4);
 				if (random == 1) {
 
-					GameObject instanceAP = Instantiate (plum, pos, new Quaternion(-90,randAng,0,1));
+					GameObject instanceAP = Instantiate (plum, pos, Quaternion.Euler(-90,randAng,0));
 					instanceAP.transform.SetParent (spawnCenter);
 					spawnedItems.Add (instanceAP);
 
 				} else {
-					GameObject instanceAP = Instantiate (branch, pos,  new Quaternion(-90,randAng,0,1));
+					GameObject instanceAP = Instantiate (branch, pos,  Quaternion.Euler(-90,randAng,0));
 					instanceAP.transform.SetParent (spawnCenter);
 					spawnedItems.Add (instanceAP);
 				}
@@ -80,12 +86,12 @@ public class SpawnItemsManager : MonoBehaviour
 				int random = Random.Range (1, 4);
 				if (random == 1) {
 
-					GameObject instanceAP = Instantiate (blackberry, pos, new Quaternion(-90,randAng,0,1));
+					GameObject instanceAP = Instantiate (blackberry, pos,Quaternion.Euler(-90,randAng,0));
 					instanceAP.transform.SetParent (spawnCenter);
 					spawnedItems.Add (instanceAP);
 
 				} else {
-					GameObject instanceAP = Instantiate (branch, pos, new Quaternion(-90,randAng,0,1));
+					GameObject instanceAP = Instantiate (branch, pos, Quaternion.Euler(-90,randAng,0));
 					instanceAP.transform.SetParent (spawnCenter);
 					spawnedItems.Add (instanceAP);
 				}
@@ -95,12 +101,12 @@ public class SpawnItemsManager : MonoBehaviour
 				int random = Random.Range (1, 4);
 				if (random == 1) {
 
-					GameObject instanceAP = Instantiate (gojiberry, pos, new Quaternion(-90,randAng,0,1));
+					GameObject instanceAP = Instantiate (gojiberry, pos, Quaternion.Euler(-90,randAng,0));
 					instanceAP.transform.SetParent (spawnCenter);
 					spawnedItems.Add (instanceAP);
 
 				} else {
-					GameObject instanceAP = Instantiate (branch, pos, new Quaternion(-90,randAng,0,1));
+					GameObject instanceAP = Instantiate (branch, pos, Quaternion.Euler(-90,randAng,0));
 					instanceAP.transform.SetParent (spawnCenter);
 					spawnedItems.Add (instanceAP);
 				}

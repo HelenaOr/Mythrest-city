@@ -73,11 +73,26 @@ public class None : MonoBehaviour {
 				string name = hit.transform.name.Replace ("(Clone)", "");
 				if (Vector3.Distance (hit.transform.position, player.transform.position) < 10) {
 					if (hit.transform.name.Contains ("Branch")) {
-						InventoryItem item = new InventoryItem (name, "A branch, nothing more, nothing less " + name, 0, 1, 20, InventoryItem.inventoryTypes.NOTEDIBLE);
+						InventoryItem item = new InventoryItem (name, "A branch, nothing more, nothing less.", 0, 1, 20, InventoryItem.inventoryTypes.NOTEDIBLE);
 						inventory.addItem (item, 1);
 						Destroy (hit.transform.gameObject);
 					} else if (hit.transform.name.Contains ("Apricot")) {
-						InventoryItem item = new InventoryItem (name, "Wild item which you can eat or sell " + name, 3, 20, 16, InventoryItem.inventoryTypes.EDIBLE);
+						InventoryItem item = new InventoryItem (name, "Wild item which you can eat or sell. Only found in spring.", 3, 20, 16, InventoryItem.inventoryTypes.EDIBLE);
+						inventory.addItem (item, 1);
+						Destroy (hit.transform.gameObject);
+
+					}else if (hit.transform.name.Contains ("Plum")) {
+						InventoryItem item = new InventoryItem (name, "Wild item which you can eat or sell. Only found in summer.", 3, 20, 16, InventoryItem.inventoryTypes.EDIBLE);
+						inventory.addItem (item, 1);
+						Destroy (hit.transform.gameObject);
+
+					}else if (hit.transform.name.Contains ("Black")) {
+						InventoryItem item = new InventoryItem (name, "Wild item which you can eat or sell. Only found in fall.", 3, 20, 16, InventoryItem.inventoryTypes.EDIBLE);
+						inventory.addItem (item, 1);
+						Destroy (hit.transform.gameObject);
+
+					}else if (hit.transform.name.Contains ("Goji")) {
+						InventoryItem item = new InventoryItem (name, "Wild item which you can eat or sell. Only found in winter", 3, 20, 16, InventoryItem.inventoryTypes.EDIBLE);
 						inventory.addItem (item, 1);
 						Destroy (hit.transform.gameObject);
 

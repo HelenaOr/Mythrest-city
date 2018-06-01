@@ -11,7 +11,7 @@ public class TimeManager : MonoBehaviour {
 
 	float hour = 6.0f;
 	float day = 1.0f;
-	float month = 1.0f;
+	float month = 4.0f;
 	float year = 1.0f;
 
 	public enum seasons {SPRING, SUMMER, FALL, WINTER};
@@ -29,9 +29,11 @@ public class TimeManager : MonoBehaviour {
 	public Material dryCrop;
 	public TimeManager time;
 	public PlayerStamina stamina;
-	public SpawnItemsManager spawnItemsManager;
 	public WheatherSystem weatherSystem;
 	public TreeBehaviour[] allTrees;
+
+	public GameObject spawnFarmAreas;
+	public GameObject spawnRoadAreas;
 
 	void Start(){
 		weatherSystem = FindObjectOfType (typeof(WheatherSystem)) as WheatherSystem;
@@ -243,6 +245,23 @@ public class TimeManager : MonoBehaviour {
 		allNpc.Tyler.gifted = false;
 		allNpc.Tyler.talked = false;
 
+		for (int i = 0; i < spawnFarmAreas.transform.childCount; i++) {
+
+			for (int j = 0; j < spawnFarmAreas.transform.GetChild (i).childCount; j++) {
+				Destroy (spawnFarmAreas.transform.GetChild (i).GetChild (j).gameObject);
+			}
+			spawnFarmAreas.transform.GetChild (i).GetComponent<SpawnItemsManager> ().spawnedItems = new List<GameObject> ();
+			spawnFarmAreas.transform.GetChild (i).GetComponent<SpawnItemsManager> ().Spawn ();
+		}
+
+		for (int i = 0; i < spawnRoadAreas.transform.childCount; i++) {
+
+			for (int j = 0; j < spawnRoadAreas.transform.GetChild (i).childCount; j++) {
+				Destroy (spawnRoadAreas.transform.GetChild (i).GetChild (j).gameObject);
+			}
+			spawnRoadAreas.transform.GetChild (i).GetComponent<SpawnItemsManager> ().spawnedItems = new List<GameObject> ();
+			spawnRoadAreas.transform.GetChild (i).GetComponent<SpawnItemsManager> ().Spawn ();
+		}
 
 		seconds = 0.0f;
 		hour = 6.0f;

@@ -144,12 +144,24 @@ public class MovingBetweenScenes : MonoBehaviour
 
 				if (npc.name.Contains ("Emily")) {
 
-					if (timeManager.getHours () >= 7.0f && timeManager.getHours () <= 19.0f) {
+					if (timeManager.getHours () >= 9.0f && timeManager.getHours () <= 19.0f) {
+						npc.SetActive (true);
+					} else if (timeManager.getHours () >= 19.0f) {
+						npc.SetActive (true);
+					} 
+					else {
+						npc.SetActive (false);
+					}
+
+				}
+				if (npc.name.Contains ("Lily")) {
+					if (timeManager.getHours () >= 7.0f && timeManager.getHours () <= 8.0f) {
+						npc.SetActive (true);
+					} else if (timeManager.getHours () >= 17.0f && timeManager.getHours () <= 20.0f) {
 						npc.SetActive (true);
 					} else {
 						npc.SetActive (false);
 					}
-
 				}
 					
 			}
@@ -176,27 +188,51 @@ public class MovingBetweenScenes : MonoBehaviour
 
 		}
 
-//		if (SceneManager.GetActiveScene ().name.Equals ("Shop")) {
-//			Debug.Log (SceneManager.GetActiveScene ().name);
-//			allNPCs = GameObject.FindGameObjectsWithTag ("NPC");
-//			foreach (GameObject npc in allNPCs) {
-//				if (timeManager.getHours () >= 9.0f && timeManager.getHours () <= 17.0f) {
-//					if (npc.name.Contains("Lily")) {
-//						Debug.Log ("Selling");
-//						npc.SetActive (true);
-//						break;
-//					}
-//				} else {
-//					if (npc.name.Contains("Lily")) {
-//						Debug.Log ("Outside");
-//						npc.SetActive (false);
-//						break;
-//					}
-//				}
-//					
-//			}
-//
-//		}
+		if (SceneManager.GetActiveScene ().name.Equals ("LilyTylerHouse")) {
+			Debug.Log (SceneManager.GetActiveScene ().name);
+			allNPCs = GameObject.FindGameObjectsWithTag ("NPC");
+
+			foreach (GameObject npc in allNPCs) {
+
+				if (npc.name.Contains ("Lily")) {
+
+					if (timeManager.getHours () >= 6.0f && timeManager.getHours () <= 7.0f) {
+						npc.SetActive (true);
+					} else if (timeManager.getHours () >= 20.0f) {
+						npc.SetActive (true);
+					}
+					else {
+						npc.SetActive (false);
+					}
+
+				}
+
+			}
+
+		}
+
+		if (SceneManager.GetActiveScene ().name.Equals ("Shop")) {
+			Debug.Log (SceneManager.GetActiveScene ().name);
+			allNPCs = GameObject.FindGameObjectsWithTag ("NPC");
+
+			foreach (GameObject npc in allNPCs) {
+
+				if (npc.name.Contains ("Lily")) {
+					npc.GetComponent<NPCMovement> ().stop ();
+					if (timeManager.getHours () >= 8.0f && timeManager.getHours () <= 17.0f) {
+						npc.SetActive (true);
+					} 
+					else {
+						npc.SetActive (false);
+					}
+
+				}
+
+			}
+
+		}
+
+
 	}
 
 

@@ -187,7 +187,7 @@ e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 7dbafc1fa0070dd9b59750603f47ad73 Assembly-CSharp.dll:.MockNPCDB
 20e2cc3fa9b8aee168d132d9402ad503 Assembly-CSharp.dll:.ShowShippingBin
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
-e38895f1cecd1831b52ba63a15e85423 Assembly-CSharp.dll:.PlayerActions
+d32505f0bd2078af7762b6576eae72ae Assembly-CSharp.dll:.PlayerActions
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -211,3 +211,4 @@ b33281a816d9094042e841ad9657bf42 Assembly-CSharp.dll:.MockNPCDialog
 a333412bfff3a80cc595ac5db1c03dd7 Assembly-CSharp.dll:.ShippingBinButtonItemCode
 918942fe8ec7dd6cbc444e73382b3618 Assembly-CSharp.dll:.PlantSeeds
 aca3c044285b5fb73703abf715f527d9 Assembly-CSharp.dll:.ShowTime
+ecdddda009bee60c160f0be87f06ccc6 Assembly-CSharp.dll:.PauseMenu

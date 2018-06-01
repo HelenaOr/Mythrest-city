@@ -10,9 +10,11 @@ public class NPCMovement : MonoBehaviour {
 	Animator anim;
 	// Use this for initialization
 	void Start () {
+		
 		anim = GetComponent<Animator> ();
 		startPosition = this.transform.position;
 		_nav = GetComponent<NavMeshAgent> ();
+
 		Vector3 randomDirection = Random.insideUnitSphere*100.0f;
 		randomDirection += startPosition;
 		NavMeshHit hit;
@@ -20,14 +22,17 @@ public class NPCMovement : MonoBehaviour {
 		NavMesh.SamplePosition (randomDirection, out hit,100.0f, 1);
 
 		this.finalPosition = hit.position;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+
 		if (!Mathf.Approximately(finalPosition.x,this.transform.position.x) && !Mathf.Approximately(finalPosition.z,this.transform.position.z)) {
 			anim.SetBool ("isWalking", true);
 			Movement (this.startPosition,this.finalPosition);
+
 		} else {
 			anim.SetBool ("isWalking", false);
 			StartCoroutine (recalculatePoint ());
@@ -60,4 +65,5 @@ public class NPCMovement : MonoBehaviour {
 	public void resume(){
 		_nav.isStopped = false;
 	}
+
 }
