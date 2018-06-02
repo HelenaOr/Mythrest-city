@@ -100,7 +100,7 @@ public class PlayerActions : MonoBehaviour
 		holdingItem = GetComponent<HoldingItem> ();
 		inventory = GetComponent<InventoryManager> ();
 		fountainCollision = GetComponent<FountainCollider> ();
-		NPCCollision = GetComponent<NPCCollision> ();
+		NPCCollision = GetComponentInChildren<NPCCollision> ();
 		if (SceneManager.GetActiveScene ().name.Contains ("Outside") || SceneManager.GetActiveScene ().name == "Farming" || SceneManager.GetActiveScene ().name == "Farm") {
 			outside = true;
 

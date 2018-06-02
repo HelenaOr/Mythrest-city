@@ -9,7 +9,7 @@ public class TimeManager : MonoBehaviour {
 
 	float seconds = 0;
 
-	float hour = 6.0f;
+	float hour = 8.0f;
 	float day = 1.0f;
 	float month = 1.0f;
 	float year = 1.0f;
@@ -43,7 +43,7 @@ public class TimeManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if (seconds <= 31) {
+		if (seconds <= 60) {
 			seconds += Time.deltaTime;
 		} else {
 			seconds = 0;

@@ -6,7 +6,7 @@ public class NPCCollision : MonoBehaviour {
 
 	public bool collision;
 	public GameObject NPC;
-	void OnCollisionEnter(Collision col){
+	void OnTriggerEnter(Collider col){
 
 		if (col.gameObject.tag =="NPC") {
 			collision = true;
@@ -15,7 +15,7 @@ public class NPCCollision : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionExit(Collision col){
+	void OnTriggerExit(Collider col){
 
 		if (col.gameObject.tag == "NPC") {
 			collision = false;

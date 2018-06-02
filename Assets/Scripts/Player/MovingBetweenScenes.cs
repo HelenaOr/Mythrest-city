@@ -63,8 +63,13 @@ public class MovingBetweenScenes : MonoBehaviour
 						player.transform.position = posToSpawnInside;
 						SceneManager.LoadScene ("FarmInside");
 					} else if (col.tag == "VillajeToShop") {
-						player.transform.position = posToSpawnOnShop;
-						SceneManager.LoadScene ("Shop");
+						if (timeManager.getHours () >= 8.0f && timeManager.getHours () < 17.0f) {
+							player.transform.position = posToSpawnOnShop;
+							SceneManager.LoadScene ("Shop");
+						} else {
+							Debug.Log ("ShopClosed");
+						}
+
 					} else if (col.tag == "VillageToEmilyHouse") {
 						player.transform.position = posToSpawnOnEmilyHouse;
 						SceneManager.LoadScene ("EmilyHouse");
@@ -144,21 +149,34 @@ public class MovingBetweenScenes : MonoBehaviour
 
 				if (npc.name.Contains ("Emily")) {
 
-					if (timeManager.getHours () >= 9.0f && timeManager.getHours () <= 19.0f) {
+					if (timeManager.getHours () >= 9.0f && timeManager.getHours () < 19.0f) {
 						npc.SetActive (true);
-					} else if (timeManager.getHours () >= 19.0f) {
-						npc.SetActive (true);
-					} 
+					}
 					else {
 						npc.SetActive (false);
 					}
 
 				}
 				if (npc.name.Contains ("Lily")) {
-					if (timeManager.getHours () >= 7.0f && timeManager.getHours () <= 8.0f) {
+					if (timeManager.getHours () >= 7.0f && timeManager.getHours () < 8.0f) {
 						npc.SetActive (true);
-					} else if (timeManager.getHours () >= 17.0f && timeManager.getHours () <= 20.0f) {
+					} else if (timeManager.getHours () >= 17.0f && timeManager.getHours () < 20.0f) {
 						npc.SetActive (true);
+					} else {
+						npc.SetActive (false);
+					}
+				}
+				if (npc.name.Contains ("Riley")) {
+					if (timeManager.getHours () >= 10.0f && timeManager.getHours () < 20.0f) {
+						npc.SetActive (true);
+					
+					} else {
+						npc.SetActive (false);
+					}
+				}if (npc.name.Contains ("Tyler")) {
+					if (timeManager.getHours () >= 7.0f && timeManager.getHours () < 19.0f) {
+						npc.SetActive (true);
+
 					} else {
 						npc.SetActive (false);
 					}
@@ -176,7 +194,7 @@ public class MovingBetweenScenes : MonoBehaviour
 
 				if (npc.name.Contains ("Emily")) {
 
-					if (timeManager.getHours () >= 9.0f && timeManager.getHours () <= 19.0f) {
+					if (timeManager.getHours () >= 9.0f && timeManager.getHours () < 19.0f) {
 						npc.SetActive (false);
 					} else {
 						npc.SetActive (true);
@@ -196,9 +214,20 @@ public class MovingBetweenScenes : MonoBehaviour
 
 				if (npc.name.Contains ("Lily")) {
 
-					if (timeManager.getHours () >= 6.0f && timeManager.getHours () <= 7.0f) {
+					if (timeManager.getHours () >= 6.0f && timeManager.getHours () < 7.0f) {
 						npc.SetActive (true);
 					} else if (timeManager.getHours () >= 20.0f) {
+						npc.SetActive (true);
+					}
+					else {
+						npc.SetActive (false);
+					}
+
+				}if (npc.name.Contains ("Tyler")) {
+
+					if (timeManager.getHours () >= 6.0f && timeManager.getHours () < 7.0f) {
+						npc.SetActive (true);
+					} else if (timeManager.getHours () >= 19.0f) {
 						npc.SetActive (true);
 					}
 					else {
@@ -210,7 +239,25 @@ public class MovingBetweenScenes : MonoBehaviour
 			}
 
 		}
+		if (SceneManager.GetActiveScene ().name.Equals ("RileyHouse")) {
+			Debug.Log (SceneManager.GetActiveScene ().name);
+			allNPCs = GameObject.FindGameObjectsWithTag ("NPC");
 
+			foreach (GameObject npc in allNPCs) {
+
+				if (npc.name.Contains ("Riley")) {
+
+					if (timeManager.getHours () >= 10.0f && timeManager.getHours () < 20.0f) {
+						npc.SetActive (false);
+					} else {
+						npc.SetActive (true);
+					}
+
+				}
+
+			}
+
+		}
 		if (SceneManager.GetActiveScene ().name.Equals ("Shop")) {
 			Debug.Log (SceneManager.GetActiveScene ().name);
 			allNPCs = GameObject.FindGameObjectsWithTag ("NPC");
@@ -218,10 +265,9 @@ public class MovingBetweenScenes : MonoBehaviour
 			foreach (GameObject npc in allNPCs) {
 
 				if (npc.name.Contains ("Lily")) {
-					if (timeManager.getHours () >= 8.0f && timeManager.getHours () <= 17.0f) {
-						npc.GetComponent<NavMeshAgent> ().isStopped = true;
+					if (timeManager.getHours () >= 8.0f && timeManager.getHours () < 17.0f) {
+						npc.GetComponent<NPCMovement> ().enabled = false;
 						npc.GetComponent<Animator> ().SetBool ("isWalking", false);
-
 						npc.SetActive (true);
 					} 
 					else {

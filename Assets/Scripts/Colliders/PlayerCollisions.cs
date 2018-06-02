@@ -19,8 +19,6 @@ public class PlayerCollisions : MonoBehaviour {
 			buttonToPress.showPanel ("E", "Exit house");
 		} else if (col.gameObject.tag == "Bed") {
 			buttonToPress.showPanel ("E", "Bed");
-		} else if (col.gameObject.tag == "NPC") {
-			buttonToPress.showPanel ("E", col.gameObject.GetComponent<NPCBehaviour> ().myself.name + " " +  col.gameObject.GetComponent<NPCBehaviour> ().myself.surname );
 		}
 	}
 
@@ -30,12 +28,16 @@ public class PlayerCollisions : MonoBehaviour {
 			if (col.GetComponent<CropBehaviour> ().state.Equals (Crops.cropStates.HARVEST)) {
 				buttonToPress.showPanel ("rightMouse", "Pick up "+ col.GetComponent<CropBehaviour> ().cropName.ToLower());
 			}
+		} else if (col.gameObject.tag == "NPC") {
+			buttonToPress.showPanel ("E", col.gameObject.GetComponent<NPCBehaviour> ().myself.name + " " +  col.gameObject.GetComponent<NPCBehaviour> ().myself.surname );
 		}
 	}
 
 	void OnTriggerExit(Collider col){
 		buttonToPress = FindObjectOfType (typeof(ButtonToPress)) as ButtonToPress;
 		if (col.gameObject.tag == "crop") {
+			buttonToPress.hidePanel ();
+		} else if (col.gameObject.tag == "NPC") {
 			buttonToPress.hidePanel ();
 		}
 	}
@@ -53,8 +55,6 @@ public class PlayerCollisions : MonoBehaviour {
 		} else if (col.gameObject.tag == "MyHouse") {
 			buttonToPress.hidePanel ();
 		} else if (col.gameObject.tag == "Bed") {
-			buttonToPress.hidePanel ();
-		} else if (col.gameObject.tag == "NPC") {
 			buttonToPress.hidePanel ();
 		}
 	}

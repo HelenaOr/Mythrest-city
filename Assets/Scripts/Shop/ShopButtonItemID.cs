@@ -6,13 +6,5 @@ public class ShopButtonItemID : MonoBehaviour {
 
 
 	public int itemCode;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
