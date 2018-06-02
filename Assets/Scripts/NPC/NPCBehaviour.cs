@@ -53,6 +53,7 @@ public class NPCBehaviour : MonoBehaviour {
 
 		} else {
 			if (!alreadygifted) {
+				
 				dialogs = dialogDB.GetDialogsForGifts (myself.name);
 				int actualfp = friendshipPoints;
 				while (friendshipPoints == actualfp) {
@@ -83,6 +84,7 @@ public class NPCBehaviour : MonoBehaviour {
 
 					canvas.transform.Find ("TalkPanel").Find ("TalkText").GetComponent<Text> ().text = dialogToSay;
 				}
+				alreadygifted = true;
 
 
 			} else {
@@ -102,8 +104,7 @@ public class NPCBehaviour : MonoBehaviour {
 	}
 	public void closeDialog(){
 		firstTalked = true;
-		alreadygifted = true;
-		myself.gifted = true;
+		myself.gifted = alreadygifted;
 		myself.talked = true;
 		talking = false;
 		this.transform.Find ("TalkCanvas").gameObject.SetActive (false);

@@ -1,21 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Managers\TimeManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NPC\MockNPCDialog.cs">
     <Files>
       <File FileName="Assets\Scripts\Inventory\InventoryButtons.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Inventory\InventoryManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerActions.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WheatherSystem.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NPC\NPCBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ToolBehaviours\HoldingItem.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\MovingBetweenScenes.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NPC\NPCMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Colliders\NPCCollision.cs" Line="1" Column="1" />
-      <File FileName="Assets\PauseMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Managers\TimeManager.cs" Line="14" Column="17" />
-      <File FileName="Assets\Scripts\Managers\SpawnItemsManager.cs" Line="109" Column="87" />
-      <File FileName="Assets\Scripts\ToolBehaviours\None.cs" Line="89" Column="51" />
+      <File FileName="Assets\Scripts\Inventory\InventoryManager.cs" Line="74" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerActions.cs" Line="196" Column="1" />
+      <File FileName="Assets\Scripts\ToolBehaviours\Sickle.cs" Line="56" Column="40" />
+      <File FileName="Assets\Scripts\NPC\MockNPCDialog.cs" Line="126" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

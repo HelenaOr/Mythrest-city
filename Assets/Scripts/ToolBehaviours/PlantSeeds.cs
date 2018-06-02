@@ -139,18 +139,8 @@ public class PlantSeeds : MonoBehaviour {
 				if (Physics.Raycast (ray, out hit)) {
 
 					if (soil [i].getSoil ().transform.gameObject.Equals (hit.transform.gameObject)) {
-						Transform s = Instantiate (seeds.transform, new Vector3 ((soil [i].getSoil ().transform.position.x), 0f, soil [i].getSoil ().transform.position.z), soil [i].getSoil ().transform.rotation) as Transform;
-						s.SetParent (seedsParent);
-						Debug.Log ("Boom");
-						if (soil [i].getType () == Soil.SoilTypes.WATERED) {
-							soil [i].soilType = Soil.SoilTypes.WATEREDANDPLATED;
-						} else {
-							soil [i].soilType = Soil.SoilTypes.PLANTED;
-						}
-						removeSeedsButton ();
 
-
-						playerStamina.loseStamina (5);
+						StartCoroutine(WaitForPlant(i));
 						break;
 
 					}
@@ -160,5 +150,20 @@ public class PlantSeeds : MonoBehaviour {
 			}
 
 		}
+	}
+
+	IEnumerator WaitForPlant(int i){
+		yield return new WaitForSeconds (1f);
+		Transform s = Instantiate (seeds.transform, new Vector3 ((soil [i].getSoil ().transform.position.x), 0f, soil [i].getSoil ().transform.position.z), soil [i].getSoil ().transform.rotation) as Transform;
+		s.SetParent (seedsParent);
+		if (soil [i].getType () == Soil.SoilTypes.WATERED) {
+			soil [i].soilType = Soil.SoilTypes.WATEREDANDPLATED;
+		} else {
+			soil [i].soilType = Soil.SoilTypes.PLANTED;
+		}
+		removeSeedsButton ();
+
+
+		playerStamina.loseStamina (5);
 	}
 }

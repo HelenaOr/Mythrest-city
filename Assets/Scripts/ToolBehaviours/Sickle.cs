@@ -38,16 +38,8 @@ public class Sickle : MonoBehaviour {
 
 					if ((hit.transform.tag == "crop"
 						&& (hit.transform.position.x == soil [i].getSoil ().transform.position.x && hit.transform.position.z == soil [i].getSoil ().transform.position.z))) {
-
-						if (soil [i].getType () == Soil.SoilTypes.PLANTED) {
-
-							soil [i].soilType = Soil.SoilTypes.PLOWED;
-
-						} if(soil [i].getType () == Soil.SoilTypes.WATEREDANDPLATED){
-							soil [i].soilType = Soil.SoilTypes.PLOWED;
-						}
+						StartCoroutine (WaitForCut (i));
 						Destroy (crops [i].gameObject);
-						playerStamina.loseStamina (5);
 						break;
 
 					}
@@ -59,5 +51,16 @@ public class Sickle : MonoBehaviour {
 
 
 
+	}
+	IEnumerator WaitForCut(int i){
+		yield return new WaitForSeconds (1.2f);
+		if (soil [i].getType () == Soil.SoilTypes.PLANTED) {
+
+			soil [i].soilType = Soil.SoilTypes.PLOWED;
+
+		} if(soil [i].getType () == Soil.SoilTypes.WATEREDANDPLATED){
+			soil [i].soilType = Soil.SoilTypes.PLOWED;
+		}
+		playerStamina.loseStamina (5);
 	}
 }

@@ -39,14 +39,7 @@ public class Hoe : MonoBehaviour {
 
 						Debug.Log ("Boom");
 						playerStamina.loseStamina (5);
-						if (timeManager.getWeather ().Equals (TimeManager.weather.RAIN) || timeManager.getWeather ().Equals (TimeManager.weather.RAINSTORM)) {
-							soil [i].soilType = Soil.SoilTypes.WATERED;
-							soil [i].getSoil ().GetComponent<Renderer> ().material = waterM;
-						} else {
-							soil [i].soilType = Soil.SoilTypes.PLOWED;
-							soil [i].getSoil ().GetComponent<Renderer> ().material = plowM;
-						}
-
+						StartCoroutine (waitForTextureChange (i));
 
 					}
 				}
@@ -54,5 +47,16 @@ public class Hoe : MonoBehaviour {
 			}
 		}
 
+	}
+
+	IEnumerator waitForTextureChange(int i){
+		yield return new WaitForSeconds (1.1f);
+		if (timeManager.getWeather ().Equals (TimeManager.weather.RAIN) || timeManager.getWeather ().Equals (TimeManager.weather.RAINSTORM)) {
+			soil [i].soilType = Soil.SoilTypes.WATERED;
+			soil [i].getSoil ().GetComponent<Renderer> ().material = waterM;
+		} else {
+			soil [i].soilType = Soil.SoilTypes.PLOWED;
+			soil [i].getSoil ().GetComponent<Renderer> ().material = plowM;
+		}
 	}
 }

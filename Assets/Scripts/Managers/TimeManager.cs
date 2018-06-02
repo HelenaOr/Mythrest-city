@@ -11,7 +11,7 @@ public class TimeManager : MonoBehaviour {
 
 	float hour = 6.0f;
 	float day = 1.0f;
-	float month = 4.0f;
+	float month = 1.0f;
 	float year = 1.0f;
 
 	public enum seasons {SPRING, SUMMER, FALL, WINTER};

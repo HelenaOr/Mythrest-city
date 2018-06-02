@@ -10,7 +10,6 @@ public class InventoryManager : MonoBehaviour
 	public const int maxItems = 20;
 
 	public int howManyItems;
-	//public InventoryItem[] items = new InventoryItem[maxItems];
 
 	public Canvas inventoryCanvas;
 
@@ -72,17 +71,7 @@ public class InventoryManager : MonoBehaviour
 			howManyItems = 0;
 		}
 		items.Remove (itemToRemove);
-//		for (int i = 0; i < items.Count; i++) {
-//			if (items [i] != null && items[i].quantity != 0) {
-//				if (items [i].code == code) {
-//					
-//					break;
-//
-//				}
-//			}
-//
-//
-//		}
+
 	}
 
 	public InventoryItem getItem (int code)

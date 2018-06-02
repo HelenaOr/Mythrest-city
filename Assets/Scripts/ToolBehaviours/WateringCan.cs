@@ -51,17 +51,7 @@ public class WateringCan : MonoBehaviour {
 						if (soil [i].getSoil ().transform.gameObject.Equals (hit.transform.gameObject) || (hit.transform.tag == "crop"
 						    && (hit.transform.position.x == soil [i].getSoil ().transform.position.x && hit.transform.position.z == soil [i].getSoil ().transform.position.z))) {
 
-							if (soil [i].getType () == Soil.SoilTypes.PLANTED) {
-
-								soil [i].soilType = Soil.SoilTypes.WATEREDANDPLATED;
-
-							} else {
-								soil [i].soilType = Soil.SoilTypes.WATERED;
-							}
-
-							Debug.Log ("Boom");
-							playerStamina.loseStamina (5);
-							soil [i].getSoil ().GetComponent<Renderer> ().material = watterM;
+							StartCoroutine(WaitForTextureChange(i));
 							break;
 
 						}
@@ -82,6 +72,21 @@ public class WateringCan : MonoBehaviour {
 		yield return new WaitForSeconds (2);
 		warning.transform.Find("Warnings").gameObject.SetActive (false);
 
+	}
+
+	IEnumerator WaitForTextureChange(int i){
+		yield return new WaitForSeconds (1.5f);
+		if (soil [i].getType () == Soil.SoilTypes.PLANTED) {
+
+			soil [i].soilType = Soil.SoilTypes.WATEREDANDPLATED;
+
+		} else {
+			soil [i].soilType = Soil.SoilTypes.WATERED;
+		}
+
+		Debug.Log ("Boom");
+		playerStamina.loseStamina (5);
+		soil [i].getSoil ().GetComponent<Renderer> ().material = watterM;
 	}
 
 	public void chargeWatteringCan(){

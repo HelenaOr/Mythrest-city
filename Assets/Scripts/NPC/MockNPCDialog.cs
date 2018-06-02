@@ -104,6 +104,14 @@ public class MockNPCDialog : MonoBehaviour {
 			} else {
 				return rileyHighFriendshipDialogs;
 			}
+		}if (npcName.Contains ("Lily")) {
+			if (FP <= 1000) {
+				return lilyLowFriendshipDialogs;
+			} else if (FP > 1000 && FP <= 2000) {
+				return lilyMediumFriendshipDialogs;
+			} else {
+				return lilyHighFriendshipDialogs;
+			}
 		}
 
 		return new List<string> ();
@@ -112,6 +120,10 @@ public class MockNPCDialog : MonoBehaviour {
 
 		if (npcName.Contains ("Emily")) {
 			return emilyThanksDialogs;
+		}if (npcName.Contains ("Riley")) {
+			return rileyThanksDialogs;
+		}if (npcName.Contains ("Lily")) {
+			return lilyThanksDialogs;
 		}
 		return new List<string> ();
 	}

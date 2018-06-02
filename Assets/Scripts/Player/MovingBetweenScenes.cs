@@ -218,8 +218,10 @@ public class MovingBetweenScenes : MonoBehaviour
 			foreach (GameObject npc in allNPCs) {
 
 				if (npc.name.Contains ("Lily")) {
-					npc.GetComponent<NPCMovement> ().stop ();
 					if (timeManager.getHours () >= 8.0f && timeManager.getHours () <= 17.0f) {
+						npc.GetComponent<NavMeshAgent> ().isStopped = true;
+						npc.GetComponent<Animator> ().SetBool ("isWalking", false);
+
 						npc.SetActive (true);
 					} 
 					else {
