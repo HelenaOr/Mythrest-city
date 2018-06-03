@@ -1,18 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Shop\ShopManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Managers\TimeManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Inventory\InventoryButtons.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Inventory\InventoryManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerActions.cs" Line="103" Column="40" />
-      <File FileName="Assets\Scripts\ToolBehaviours\Sickle.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Inventory\InventoryButtons.cs" Line="113" Column="5" />
+      <File FileName="Assets\Scripts\Inventory\InventoryManager.cs" Line="16" Column="62" />
+      <File FileName="Assets\Scripts\Player\PlayerActions.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\NPC\MockNPCDialog.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\MovingBetweenScenes.cs" Line="70" Column="33" />
+      <File FileName="Assets\Scripts\Player\MovingBetweenScenes.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Colliders\NPCCollision.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ToolBehaviours\HoldingItem.cs" Line="31" Column="4" />
+      <File FileName="Assets\Scripts\NPC\NPCBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerGold.cs" Line="9" Column="37" />
+      <File FileName="Assets\Scripts\Inventory\ShowInventory.cs" Line="1" Column="1" />
+      <File FileName="Assets\audioManager.cs" Line="28" Column="20" />
       <File FileName="Assets\Scripts\Managers\TimeManager.cs" Line="12" Column="16" />
-      <File FileName="Assets\Scripts\Colliders\NPCCollision.cs" Line="18" Column="29" />
-      <File FileName="Assets\Scripts\Colliders\PlayerCollisions.cs" Line="42" Column="4" />
-      <File FileName="Assets\Scripts\Shop\ShopManager.cs" Line="48" Column="69" />
-      <File FileName="Assets\Scripts\Shop\ShopButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ToolBehaviours\PlantSeeds.cs" Line="106" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

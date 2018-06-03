@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4484050988643244}
   - component: {fileID: 137145347585845108}
+  - component: {fileID: 65724392691010798}
   m_Layer: 0
   m_Name: Human
   m_TagString: Untagged
@@ -117,10 +118,10 @@ GameObject:
   - component: {fileID: 4378308185014094}
   - component: {fileID: 95579612060527644}
   - component: {fileID: 54452125539459606}
-  - component: {fileID: 65828471761117662}
   - component: {fileID: 114876551509500654}
   - component: {fileID: 195258990765441354}
   - component: {fileID: 114453238572218062}
+  - component: {fileID: 65916477073461920}
   m_Layer: 0
   m_Name: EmilyLawrence
   m_TagString: NPC
@@ -600,18 +601,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!65 &65828471761117662
+--- !u!65 &65724392691010798
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1117262508483834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9295247, y: 3.3718138, z: 0.75906765}
+  m_Center: {x: 0.0429804, y: 1.598389, z: -0.004357781}
+--- !u!65 &65916477073461920
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1243154828192028}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.88273406, y: 3.174485, z: 0.61889213}
-  m_Center: {x: 0, y: 1.5468612, z: -0.014658247}
+  m_Size: {x: 6.3505535, y: 4.2413917, z: 4.6956997}
+  m_Center: {x: -0.08780671, y: 1.6206946, z: -0.027277267}
 --- !u!95 &95579612060527644
 Animator:
   serializedVersion: 3
@@ -805,7 +818,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -1058,8 +1071,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1.3, y: 96.2}
-  m_SizeDelta: {x: -15.8, y: 169.1}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: -40, y: 159.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224603723522045518
 RectTransform:
@@ -1097,6 +1110,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -132.2775, y: 102.9}
-  m_SizeDelta: {x: -264.5, y: 205.8}
+  m_AnchoredPosition: {x: -132.26375, y: 102.9}
+  m_SizeDelta: {x: -264.5275, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}

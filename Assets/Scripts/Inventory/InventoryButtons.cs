@@ -107,7 +107,18 @@ public class InventoryButtons : MonoBehaviour
 				}
 
 			}
-		} else {
+
+		} else if (item.inventoryType.Equals (InventoryItem.inventoryTypes.SEED)) {
+			foreach (Button iob in optionsButtons) {
+				if (iob.name == "Throw") {
+					iob.onClick.AddListener (() => throwItem (item, iob, b));
+				} else if (iob.name == "Cancel") {
+					iob.onClick.AddListener (() => cancel (iob));
+				}
+
+			}
+		}
+		else {
 			foreach (Button iob in optionsButtons) {
 				if (iob.name == "Hold") {
 					iob.onClick.AddListener (() => hold (item,iob));
@@ -134,11 +145,14 @@ public class InventoryButtons : MonoBehaviour
 		ButtonToPress btp = FindObjectOfType (typeof(ButtonToPress)) as ButtonToPress;
 		btp.showPanel ("X", "Save " + item.name);
 		anim.SetBool ("isHolding", true);
-		if (item.inventoryType.Equals (InventoryItem.inventoryTypes.EDIBLE) ||item.inventoryType.Equals (InventoryItem.inventoryTypes.NOTEDIBLE) ) {
+		if (item.inventoryType.Equals (InventoryItem.inventoryTypes.EDIBLE) 
+			||item.inventoryType.Equals (InventoryItem.inventoryTypes.NOTEDIBLE) ) {
+			Debug.Log ("Hold " + item.inventoryType.ToString ().ToLower () + "/" + item.name.ToLower ());
 			GameObject resource = Resources.Load<GameObject> ("Hold "+ item.inventoryType.ToString().ToLower()+"/" + item.name.ToLower());
 			GameObject instance = Instantiate (resource, GameObject.FindGameObjectWithTag ("Player").transform);
 			holdingItem.item = instance;
 			holdingItem.itemCode = item.code;
+
 		}
 		Destroy (iob.transform.parent.gameObject);
 		enableButtons ();

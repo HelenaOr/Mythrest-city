@@ -15,6 +15,8 @@ public class NPCBehaviour : MonoBehaviour {
 	public MockNPCDialog dialogDB;
 	public bool gifting;
 	public bool talking;
+	public string dialogToSay;
+
 	// Use this for initialization
 	void Start () {
 		NPCdatabase = FindObjectOfType (typeof(MockNPCDB)) as MockNPCDB;
@@ -40,7 +42,6 @@ public class NPCBehaviour : MonoBehaviour {
 		this.transform.Find ("TalkCanvas").gameObject.SetActive (true);
 		Time.timeScale = 0.0f;
 		Transform canvas = this.transform.Find ("TalkCanvas");
-		string dialogToSay;
 
 		if (itemCode == -1) {
 			if (firstTalked == false) {
@@ -53,37 +54,33 @@ public class NPCBehaviour : MonoBehaviour {
 
 		} else {
 			if (!alreadygifted) {
-				
 				dialogs = dialogDB.GetDialogsForGifts (myself.name);
 				int actualfp = friendshipPoints;
-				while (friendshipPoints == actualfp) {
-					if (myself.favouriteItem == itemCode) {
-						friendshipPoints += 800;
-						dialogToSay = dialogs [0];
+				if (howLiked(itemCode) == "favourite") {
+					friendshipPoints += 800;
+					dialogToSay = dialogs [0];
+				}
+				if (howLiked(itemCode) == "liked") {
+						friendshipPoints += 300;
+						dialogToSay = dialogs [1];
+
 					}
-					foreach (int i in myself.likedItems) {
-						if (i == itemCode) {
-							friendshipPoints += 300;
-							dialogToSay = dialogs [1];
-							break;
-						}
+				
+				if (howLiked(itemCode) == "disliked") {
+						friendshipPoints -= 300;
+						dialogToSay = dialogs [2];
 					}
-					foreach (int i in myself.dislikedItems) {
-						if (i == itemCode) {
-							friendshipPoints -= 300;
-							dialogToSay = dialogs [2];
-							break;
-						}
-					}
-					if (myself.horrorItem == itemCode) {
-						friendshipPoints -= 800;
-						dialogToSay = dialogs [3];
-					}
+				
+				if (howLiked(itemCode) == "horror") {
+					friendshipPoints -= 800;
+					dialogToSay = dialogs [3];
+				}if (howLiked(itemCode) == "neutral") {
 					friendshipPoints += 50;
 					dialogToSay = dialogs [4];
-
-					canvas.transform.Find ("TalkPanel").Find ("TalkText").GetComponent<Text> ().text = dialogToSay;
 				}
+
+
+				canvas.transform.Find ("TalkPanel").Find ("TalkText").GetComponent<Text> ().text = dialogToSay;
 				alreadygifted = true;
 
 
@@ -102,6 +99,27 @@ public class NPCBehaviour : MonoBehaviour {
 
 
 	}
+
+	string howLiked(int itemCode){
+		if (myself.favouriteItem == itemCode) {
+			return "favourite";
+		}
+		foreach (int i in myself.likedItems) {
+			if (i == itemCode) {
+				return "liked";
+			}
+		}
+		foreach (int i in myself.dislikedItems) {
+			if (i == itemCode) {
+				return "disliked";
+			}
+		}
+		if (myself.horrorItem == itemCode) {
+			return "horror";
+		}
+		return "neutral";
+	}
+
 	public void closeDialog(){
 		firstTalked = true;
 		myself.gifted = alreadygifted;

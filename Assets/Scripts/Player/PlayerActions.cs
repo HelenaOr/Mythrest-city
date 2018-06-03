@@ -128,13 +128,15 @@ public class PlayerActions : MonoBehaviour
 
 			if (NPCCollision.collision == true ) {
 				if(Input.GetKey (KeyCode.E)){
-					
-					if (!NPCCollision.NPC.GetComponent<NPCBehaviour> ().alreadygifted) {
+					if (NPCCollision.NPC.GetComponent<NPCBehaviour> ().alreadygifted) {
+						NPCCollision.NPC.GetComponent<NPCBehaviour> ().Talk (holdingItem.itemCode);
+						anim.SetBool ("isHolding", false);
+						holdingItem.saveItem ();
+					} else {
 						NPCCollision.NPC.GetComponent<NPCBehaviour> ().Talk (holdingItem.itemCode);
 						anim.SetBool ("isHolding", false);
 						holdingItem.Gift (holdingItem.itemCode);
 					}
-
 
 
 				}
@@ -142,6 +144,7 @@ public class PlayerActions : MonoBehaviour
 			}
 			if (NPCCollision.collision == true && NPCCollision.NPC.GetComponent<NPCBehaviour> ().talking) {
 				if (Input.GetMouseButtonDown (0)) {
+					anim.SetBool ("isHolding", false);
 					NPCCollision.NPC.GetComponent<NPCBehaviour> ().closeDialog ();
 				}
 
@@ -223,6 +226,7 @@ public class PlayerActions : MonoBehaviour
 
 			} if (NPCCollision.collision == true && !NPCCollision.NPC.GetComponent<NPCBehaviour> ().talking) {
 				if (Input.GetKey (KeyCode.E)) {
+					anim.SetBool ("isHolding", false);
 					NPCCollision.NPC.GetComponent<NPCBehaviour> ().Talk (-1);
 
 
@@ -231,6 +235,7 @@ public class PlayerActions : MonoBehaviour
 			}
 			if (NPCCollision.collision == true && NPCCollision.NPC.GetComponent<NPCBehaviour> ().talking) {
 				if (Input.GetMouseButtonDown (0)) {
+					anim.SetBool ("isHolding", false);
 					NPCCollision.NPC.GetComponent<NPCBehaviour> ().closeDialog ();
 				}
 

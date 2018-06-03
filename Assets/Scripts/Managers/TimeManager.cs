@@ -9,7 +9,7 @@ public class TimeManager : MonoBehaviour {
 
 	float seconds = 0;
 
-	float hour = 8.0f;
+	float hour = 6.0f;
 	float day = 1.0f;
 	float month = 1.0f;
 	float year = 1.0f;
@@ -35,8 +35,11 @@ public class TimeManager : MonoBehaviour {
 	public GameObject spawnFarmAreas;
 	public GameObject spawnRoadAreas;
 
+	public GameObject audioManager;
+
 	void Start(){
 		weatherSystem = FindObjectOfType (typeof(WheatherSystem)) as WheatherSystem;
+		audioManager = GameObject.FindGameObjectWithTag ("AudioManager");
 		setWeather ();
 
 	}
@@ -56,6 +59,7 @@ public class TimeManager : MonoBehaviour {
 		if (day >= 31) {
 			day = 1;
 			month += 1;
+			audioManager.GetComponent<audioManager> ().changeMusic (month);
 
 		}
 		if (month >= 5) {
@@ -83,6 +87,8 @@ public class TimeManager : MonoBehaviour {
 		if (month == 4) {
 			season = seasons.WINTER;
 		}
+
+
 
 	}
 

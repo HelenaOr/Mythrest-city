@@ -103,7 +103,7 @@ public class PlantSeeds : MonoBehaviour {
 		}  
 	}
 
-	void removeSeedsButton(){
+	public void removeSeedsButton(){
 		Button[] buttons = ToolCanvas.GetComponentInChildren<ScrollRect> ().content.GetComponentsInChildren<Button> ();
 		foreach (Button b in buttons) {
 			if (int.Parse(b.tag) == seedsCode) {

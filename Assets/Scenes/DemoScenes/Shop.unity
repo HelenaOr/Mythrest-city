@@ -911,7 +911,7 @@ MonoBehaviour:
     price: 0
     itemType: 0
   items: []
---- !u!1001 &1697974892
+--- !u!1001 &1966845504
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -951,8 +951,8 @@ Prefab:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1266007261468028, guid: cc1c3a64ab25b0a4fb4665c856790a71, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_Name
+      value: LilyDavis
       objectReference: {fileID: 0}
     - target: {fileID: 4531084623752574, guid: cc1c3a64ab25b0a4fb4665c856790a71, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y

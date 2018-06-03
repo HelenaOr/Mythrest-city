@@ -109,12 +109,14 @@ public class ToolManager : MonoBehaviour
 		
 		player.tool = PlayerActions.Tools.HOE;
 		player.seed = PlayerActions.Seeds.NONE;
+		Exit ();
 	}
 
 	public void EquipWCan ()
 	{
 		player.tool = PlayerActions.Tools.WATERINGCAN;
 		player.seed = PlayerActions.Seeds.NONE;
+		Exit ();
 
 	}
 
@@ -122,6 +124,7 @@ public class ToolManager : MonoBehaviour
 	{
 		player.tool = PlayerActions.Tools.SICKLE;
 		player.seed = PlayerActions.Seeds.NONE;
+		Exit ();
 
 	}
 
@@ -129,6 +132,7 @@ public class ToolManager : MonoBehaviour
 	{
 		player.tool = PlayerActions.Tools.NONE;
 		player.seed = PlayerActions.Seeds.NONE;
+		Exit ();
 
 	}
 
@@ -136,6 +140,7 @@ public class ToolManager : MonoBehaviour
 	{
 		player.tool = PlayerActions.Tools.SEEDS;
 		player.seed = PlayerActions.Seeds.TURNIP;
+		Exit ();
 
 	}
 
@@ -143,56 +148,67 @@ public class ToolManager : MonoBehaviour
 	{
 		player.tool = PlayerActions.Tools.SEEDS;
 		player.seed = PlayerActions.Seeds.CABBAGE;
+		Exit ();
 	}
 
 	public void EquipCarrotSeeds ()
 	{
 		player.tool = PlayerActions.Tools.SEEDS;
 		player.seed = PlayerActions.Seeds.CARROT;
+		Exit ();
 	}
 
 	public void EquipOnionSeeds ()
 	{
 		player.tool = PlayerActions.Tools.SEEDS;
 		player.seed = PlayerActions.Seeds.ONION;
+		Exit ();
 	}
 
 	public void EquipRadishSeeds ()
 	{
 		player.tool = PlayerActions.Tools.SEEDS;
 		player.seed = PlayerActions.Seeds.RADISH;
+		Exit ();
 	}
 
 	public void EquipSpinachSeeds ()
 	{
 		player.tool = PlayerActions.Tools.SEEDS;
 		player.seed = PlayerActions.Seeds.SPINACH;
+		Exit ();
 	}
 	public void EquipDaikonRadishSeeds ()
 	{
 		player.tool = PlayerActions.Tools.SEEDS;
 		player.seed = PlayerActions.Seeds.DAIKONRADISH;
+		Exit ();
 	}
 	public void EquipBroccoliSeeds ()
 	{
 		player.tool = PlayerActions.Tools.SEEDS;
 		player.seed = PlayerActions.Seeds.BROCCOLI;
+		Exit ();
 	}
 	public void EquipCherryTreeSeeds(){
 		player.tool = PlayerActions.Tools.SEEDS;
 		player.seed = PlayerActions.Seeds.CHERRYTREE;
+		Exit ();
 	}
 	public void EquipPeachTreeSeeds(){
 		player.tool = PlayerActions.Tools.SEEDS;
 		player.seed = PlayerActions.Seeds.PEACHTREE;
+		Exit ();
 	}
 	public void EquipAppleTreeSeeds(){
 		player.tool = PlayerActions.Tools.SEEDS;
 		player.seed = PlayerActions.Seeds.APPLETREE;
+		Exit ();
 	}
 	public void EquipOrangeTreeSeeds(){
 		player.tool = PlayerActions.Tools.SEEDS;
 		player.seed = PlayerActions.Seeds.ORANGETREE;
+		Exit ();
 	}
 	public void Exit ()
 	{

@@ -19,6 +19,11 @@ public class MockNPCDialog : MonoBehaviour {
 	public List<string> lilyHighFriendshipDialogs;
 	public List<string> lilyThanksDialogs;
 
+	public List<string> tylerLowFriendshipDialogs;
+	public List<string> tylerMediumFriendshipDialogs;
+	public List<string> tylerHighFriendshipDialogs;
+	public List<string> tylerThanksDialogs;
+
 	// Use this for initialization
 	void Start () {
 		//EMLILY//
@@ -40,12 +45,13 @@ public class MockNPCDialog : MonoBehaviour {
 		emilyThanksDialogs.Add ("You hate my so much that you gave me a spinach? What's wrong with you!?");//3
 		emilyThanksDialogs.Add("Well, this is not bad.");//4
 		emilyThanksDialogs.Add("I would feel bad receiving another gift, please keep it");//5
+
 		//RILEY//
 		rileyLowFriendshipDialogs.Add ("Ey, having a good day? I'm bored as ever in this small village.");
-		rileyLowFriendshipDialogs.Add ("I wish to go to town someday and meet new people, it would be amazing");
+		rileyLowFriendshipDialogs.Add ("I wish to go to town someday and meet new people, it would be amazing.");
 		rileyLowFriendshipDialogs.Add ("Why did you came here? You had a really good life back in the city, I can't understand you.");
 
-		rileyMediumFriendshipDialogs.Add ("Since you came here life is a bit more interesting, you could have come here earlier");
+		rileyMediumFriendshipDialogs.Add ("Since you came here life is a bit more interesting, you could have come here earlier.");
 		rileyMediumFriendshipDialogs.Add ("Someday I will travel to the city and see how people live and behave there.");
 		rileyMediumFriendshipDialogs.Add ("Don't exhaust yourself with farm chores, you need to take a break sometimes.");
 
@@ -70,10 +76,10 @@ public class MockNPCDialog : MonoBehaviour {
 		lilyMediumFriendshipDialogs.Add ("Things have become livelier since you came here, it's pretty good. Thank you.");
 
 		lilyHighFriendshipDialogs.Add ("You have a brilliant future, I can tell by simply looking at you.");
-		lilyHighFriendshipDialogs.Add ("I don't know what will I do when Tyler grows up, he's a whole to me");
+		lilyHighFriendshipDialogs.Add ("I don't know what will I do when Tyler grows up, he's a whole to me.");
 		lilyHighFriendshipDialogs.Add ("The village has become a better place with you here, it's a pleasure helping you out.");
 
-		lilyThanksDialogs.Add("Is that a fruit smoothie!? I LOVE IT. Thank you very much dear.");
+		lilyThanksDialogs.Add("Is that a bracelet!? I LOVE IT. Thank you very much dear.");
 		lilyThanksDialogs.Add("I really like it, thank you");
 		lilyThanksDialogs.Add("Guess I should say thanks");
 		lilyThanksDialogs.Add ("What are you thinking giving me somthing like that!");
@@ -82,7 +88,24 @@ public class MockNPCDialog : MonoBehaviour {
 
 		//TYLER//
 
+		tylerLowFriendshipDialogs.Add("My mother runs this town shops, you should go and check it.");
+		tylerLowFriendshipDialogs.Add("I like going to the town square, the fountain is pretty.");
+		tylerLowFriendshipDialogs.Add("My father is out of town, sometimes he sends letters.");
 
+		tylerMediumFriendshipDialogs.Add("Ey! wanna play with me? It would be amazing!");
+		tylerMediumFriendshipDialogs.Add("Yesterday we received a letter from father, he says he is ok and that he misses us.");
+		tylerMediumFriendshipDialogs.Add ("How was your life in town? Awful you say? How bad...");
+	
+		tylerHighFriendshipDialogs.Add("Dou you need help? Is everything ok? Why don't you play with me?");
+		tylerHighFriendshipDialogs.Add("I like this village, and since you came here things are livelier.");
+		tylerHighFriendshipDialogs.Add("Can I go to your farm? Please, please, please!");
+
+		tylerThanksDialogs.Add("An apple!? Realy!? THANK YOU VERY MUCH!");
+		tylerThanksDialogs.Add("Thank you! I really like this.");
+		tylerThanksDialogs.Add("Weeeeel this is ok I suppose.");
+		tylerThanksDialogs.Add("Aw... really? I suppose I will accept it.");
+		tylerThanksDialogs.Add("Wine!? Oh come on, I'm a minor you know!?");
+		tylerThanksDialogs.Add("Mother told me to not accept so many things in one day.");
 
 	}
 
@@ -112,6 +135,14 @@ public class MockNPCDialog : MonoBehaviour {
 			} else {
 				return lilyHighFriendshipDialogs;
 			}
+		}if (npcName.Contains ("Tyler")) {
+			if (FP <= 1000) {
+				return tylerLowFriendshipDialogs;
+			} else if (FP > 1000 && FP <= 2000) {
+				return tylerMediumFriendshipDialogs;
+			} else {
+				return tylerHighFriendshipDialogs;
+			}
 		}
 
 		return new List<string> ();
@@ -124,6 +155,8 @@ public class MockNPCDialog : MonoBehaviour {
 			return rileyThanksDialogs;
 		}if (npcName.Contains ("Lily")) {
 			return lilyThanksDialogs;
+		}if (npcName.Contains ("Tyler")) {
+			return tylerThanksDialogs;
 		}
 		return new List<string> ();
 	}
