@@ -285,7 +285,8 @@ public class PlayerActions : MonoBehaviour
 		anim.SetBool ("isRecollecting", false);
 	}
 	IEnumerator waitForEndOfAnimPlant(){
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (1.1f);
 		anim.SetBool ("isPlanting", false);
+
 	}
 }

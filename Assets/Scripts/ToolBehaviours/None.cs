@@ -52,13 +52,13 @@ public class None : MonoBehaviour {
 									if (s.getType ().Equals (Soil.SoilTypes.WATEREDANDPLATED)) {
 										s.soilType = Soil.SoilTypes.WATERED;
 									}
-									buttonToPress.hidePanel ();
-									Destroy (crops [i].transform.gameObject);
+
+
 								}
 							}
 
-
-
+							buttonToPress.hidePanel ();
+							Destroy (crops [i].transform.gameObject);
 							InventoryItem item = new InventoryItem (crops [i].cropName, crops [i].cropDescription, crops [i].staminaRecovery,crops[i].price, crops[i].code, InventoryItem.inventoryTypes.EDIBLE);
 							inventory.addItem (item, 9);
 

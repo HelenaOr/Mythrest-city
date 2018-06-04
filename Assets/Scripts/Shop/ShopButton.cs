@@ -22,7 +22,6 @@ public class ShopButton : MonoBehaviour
 		buttons = content.gameObject.GetComponentsInChildren<Button> ();
 		foreach (Button b in buttons) {
 			Debug.Log (b.name);
-			b.onClick.RemoveAllListeners ();
 			if (b.GetComponentInChildren<Text> ().text.ToLower ().Contains ("seeds")) {
 				b.onClick.AddListener (() => buySeeds (b));
 

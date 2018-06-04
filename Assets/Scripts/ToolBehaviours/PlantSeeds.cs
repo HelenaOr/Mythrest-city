@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlantSeeds : MonoBehaviour {
 	PlayerActions playerActions;
 	PlayerStamina playerStamina;
+	Animator playerAnimator;
 	Transform seeds;
 
 	List<Soil> soil;
@@ -37,7 +38,7 @@ public class PlantSeeds : MonoBehaviour {
 
 		playerActions = GetComponent<PlayerActions> ();
 		playerStamina = GetComponent<PlayerStamina> ();
-
+		playerAnimator = GetComponent<Animator> ();
 		 
 
 		///Resources///
@@ -139,8 +140,15 @@ public class PlantSeeds : MonoBehaviour {
 				if (Physics.Raycast (ray, out hit)) {
 
 					if (soil [i].getSoil ().transform.gameObject.Equals (hit.transform.gameObject)) {
-
-						StartCoroutine(WaitForPlant(i));
+						removeSeedsButton ();
+						playerStamina.loseStamina (5);
+						Transform s = Instantiate (seeds.transform, new Vector3 ((soil [i].getSoil ().transform.position.x), 0f, soil [i].getSoil ().transform.position.z), soil [i].getSoil ().transform.rotation) as Transform;
+						s.SetParent (seedsParent);
+						if (soil [i].getType () == Soil.SoilTypes.WATERED) {
+							soil [i].soilType = Soil.SoilTypes.WATEREDANDPLATED;
+						} else {
+							soil [i].soilType = Soil.SoilTypes.PLANTED;
+						}
 						break;
 
 					}
@@ -152,18 +160,4 @@ public class PlantSeeds : MonoBehaviour {
 		}
 	}
 
-	IEnumerator WaitForPlant(int i){
-		yield return new WaitForSeconds (1f);
-		Transform s = Instantiate (seeds.transform, new Vector3 ((soil [i].getSoil ().transform.position.x), 0f, soil [i].getSoil ().transform.position.z), soil [i].getSoil ().transform.rotation) as Transform;
-		s.SetParent (seedsParent);
-		if (soil [i].getType () == Soil.SoilTypes.WATERED) {
-			soil [i].soilType = Soil.SoilTypes.WATEREDANDPLATED;
-		} else {
-			soil [i].soilType = Soil.SoilTypes.PLANTED;
-		}
-		removeSeedsButton ();
-
-
-		playerStamina.loseStamina (5);
-	}
 }
