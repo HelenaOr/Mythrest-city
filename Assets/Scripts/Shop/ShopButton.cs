@@ -37,7 +37,11 @@ public class ShopButton : MonoBehaviour
 	}
 		
 
+	void OnEnable(){
+		playerGold = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerGold> ();
+		shopManager = FindObjectOfType (typeof(ShopManager)) as ShopManager;
 
+	}
 
 	void Exit ()
 	{
@@ -49,9 +53,7 @@ public class ShopButton : MonoBehaviour
 
 	void buySeeds (Button button)
 	{
-		playerGold = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerGold> ();
 		MockShopDB shopItems = FindObjectOfType<MockShopDB> ();
-
 		if (playerGold.currentMoney < shopManager.getShopItem (button.GetComponent<ShopButtonItemID> ().itemCode).price) {
 			playerGold.notEnoughMoney ();
 			Exit ();
@@ -211,9 +213,7 @@ public class ShopButton : MonoBehaviour
 	}
 
 	void buyItem(Button b){
-		playerGold = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerGold> ();
 		MockShopDB shopItems = FindObjectOfType<MockShopDB> ();
-
 		if (playerGold.currentMoney < shopManager.getShopItem (b.GetComponent<ShopButtonItemID> ().itemCode).price) {
 			playerGold.notEnoughMoney ();
 			Exit ();
